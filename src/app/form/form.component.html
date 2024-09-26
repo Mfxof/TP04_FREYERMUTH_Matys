@@ -1,0 +1,8 @@
+<p>Affichage de form !</p>
+{{ nom }}
+
+<button [disabled]="!valid">Envoyer</button>
+
+<button (click)="onSubmit()">Valider</button>
+
+<input [(ngModel)]="nom" />
