@@ -10,7 +10,7 @@ import { Router } from '@angular/router'; // Import Router for navigation
   imports: [FormsModule] // Add FormsModule to imports
 })
 export class FormComponent {
-    nom : String = "Tu valide le JS ?";
+    nom : String = "NOM";
   prenom: string = '';
   adresse: string = '';
   cp: string = '';
