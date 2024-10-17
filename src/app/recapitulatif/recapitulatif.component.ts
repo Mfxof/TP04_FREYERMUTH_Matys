@@ -17,7 +17,7 @@ export class RecapitulatifComponent {
   email: string = '';
   civilite: string = '';
   login: string = '';
-  password: string = ''; // Add password if needed
+  password: string = '';
 
   constructor(private router: Router) {
     const navigation = this.router.getCurrentNavigation();
