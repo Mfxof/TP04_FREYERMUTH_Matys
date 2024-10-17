@@ -1,21 +1,12 @@
-<app-form></app-form>
-
-<app-form></app-form>
-
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulaire TP01</title>
-
-    <!-- Lien vers la Bootstrap pour pas que se soit trop moche -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application TP02</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
     <link
       class="logo"
       rel="icon"
@@ -24,140 +15,23 @@
     />
 
     <script src="js/javaScript.js"></script>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </head>
 
-  <body>
-    <header class="container mt-4">
-      <h1>Formulaire TP01</h1>
-    </header>
 
-    <main class="container mt-4">
-      <form id="client-form" class="needs-validation" novalidate action="valide.html">
+</head>
+<body>
+    <app-header></app-header>
+    <div class="container mt-4">
+        <app-form (formSubmitted)="clientData = $event"></app-form>
 
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="firstName">Prénom</label>
-            <input
-              type="text"
-              class="form-control"
-              id="firstName"
-              name="prenom"
-              required
-            />
-            <div class="invalid-feedback">Entrer votre prénom</div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="lastName">Nom</label>
-            <input
-              type="text"
-              class="form-control"
-              id="lastName"
-              name="nom"
-              required
-            />
-            <div class="invalid-feedback">Entrer votre nom</div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="address">Adresse</label>
-            <input
-              type="text"
-              class="form-control"
-              id="address"
-              name="adresse"
-              required
-            />
-            <div class="invalid-feedback">Entrer votre adresse</div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="cp">Code Postal</label>
-            <input
-              type="text"
-              class="form-control"
-              id="cp"
-              name="cp"
-              required
-              pattern="\d{5}"
-            />
-            <div class="invalid-feedback">Entrer un code postal valide</div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <label for="city">Ville</label>
-            <input
-              type="text"
-              class="form-control"
-              id="city"
-              name="ville"
-              required
-            />
-            <div class="invalid-feedback">Ville</div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-6 mb-3">
-            <label for="tel">Téléphone</label>
-            <input
-              type="tel"
-              class="form-control"
-              id="tel"
-              name="tel"
-              required
-              pattern="^(\+33|0)[1-9](\d{2}){4}$"
-            />
-            <div class="invalid-feedback">
-              Entrer un numéro de téléphone valide
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="email">Email</label>
-            <input
-              type="email"
-              class="form-control"
-              id="email"
-              name="email"
-              required
-            />
-            <div class="invalid-feedback">Entrer une adresse email valide</div>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <label for="civility">Civilité</label>
-            <select class="form-control" id="civility" name="civilite" required>
-              <option value="">Choisir...</option>
-              <option value="M">Monsieur</option>
-              <option value="Mme">Madame</option>
-            </select>
-            <div class="invalid-feedback">sélectionner votre civilité</div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="login">Login</label>
-            <input
-              type="text"
-              class="form-control"
-              id="login"
-              name="login"
-              required
-            />
-            <div class="invalid-feedback">Entrer un login.</div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label for="password">Mot de passe</label>
-            <input
-              type="password"
-              class="form-control"
-              id="password"
-              name="password"
-              required
-            />
-            <div class="invalid-feedback">Entrerr un mot de passe.</div>
-          </div>
-        </div>
-        <button class="btn btn-primary" type="submit">Créer le compte</button>
-      </form>
-    </main>
-  </body>
+    </div>
+    
+    <br><br>
+    <h2>Résumée des informations :</h2>
+
+    <div class="container mt-4">
+        <app-summary [clientData]="clientData"></app-summary>
+    </div>
+    <app-footer></app-footer>
+</body>
 </html>

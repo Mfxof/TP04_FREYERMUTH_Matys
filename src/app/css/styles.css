@@ -1,0 +1,56 @@
+@primary-color: #007bff;
+@secondary-color: #6c757d;
+@font-size-base: 16px;
+
+body {
+  font-size: @font-size-base;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: @secondary-color;
+}
+
+header {
+  background-color: @primary-color;
+  color: black;
+  padding: 15px;
+}
+
+header h1,
+footer p {
+  margin: 0;
+  text-align: center;
+}
+
+button.btn-primary {
+  background-color: darken(@primary-color, 10%);
+  border-color: darken(@primary-color, 15%);
+}
+
+
+
+.conteneur-succes {
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.conteneur-succes h1 {
+  font-size: 2.5em;
+  color: #007bff;
+}
+
+.conteneur-succes p {
+  font-size: 1.5em;
+  color: #6c757d;
+}
+
+.image-recompense {
+  margin-top: 20px;
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body{
+  background-color: #007bff;
+}

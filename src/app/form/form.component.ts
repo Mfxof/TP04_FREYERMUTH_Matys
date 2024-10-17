@@ -1,18 +1,42 @@
-import { Component } from '@angular/core';
-import { FormsModule} from '@angular/Forms';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './form.component.html',
-  styleUrl: './form.component.css'
+  styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-  nom : String = "Tu valide le JS ?";
-  valid : boolean = false;
-  onSubmit(){
-    this.valid = !this.valid;
-  }
+  prenom = '';
+  nom = '';
+  adresse = '';
+  cp = '';
+  ville = '';
+  tel = '';
+  email = '';
+  civilite = '';
+  login = '';
+  password = '';
 
+  @Output() formSubmitted = new EventEmitter<any>();
+
+  onSubmit() {
+    const clientData = {
+      prenom: this.prenom,
+      nom: this.nom,
+      adresse: this.adresse,
+      cp: this.cp,
+      ville: this.ville,
+      tel: this.tel,
+      email: this.email,
+      civilite: this.civilite,
+      login: this.login,
+      password: this.password,
+    };
+
+    this.formSubmitted.emit(clientData);
+  }
 }

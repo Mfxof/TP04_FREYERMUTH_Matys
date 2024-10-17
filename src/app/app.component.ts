@@ -1,14 +1,20 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {FormComponent } from './form/form.component'
+import { FormComponent } from './form/form.component';
+import { SummaryComponent } from './summary/summary.component'; 
 
 @Component({
   selector: 'app-root',
+  template: `
+    <app-form (formSubmitted)="onFormSubmit($event)"></app-form>
+    <app-summary *ngIf="formSubmittedData" [clientData]="formSubmittedData"></app-summary>
+  `,
   standalone: true,
-  imports: [RouterOutlet, FormComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [FormComponent, SummaryComponent],
 })
 export class AppComponent {
-  title = 'TP02';
+  formSubmittedData: any;
+
+  onFormSubmit(data: any) {
+    this.formSubmittedData = data;
+  }
 }
