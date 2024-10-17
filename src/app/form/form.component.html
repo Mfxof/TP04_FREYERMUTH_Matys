@@ -1,55 +1,126 @@
-<form (ngSubmit)="onSubmit()" #clientForm="ngForm">
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="firstName">Prénom</label>
-      <input type="text" class="form-control" id="firstName" name="prenom" required [(ngModel)]="prenom" />
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="lastName">Nom</label>
-      <input type="text" class="form-control" id="lastName" name="nom" required [(ngModel)]="nom" />
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="address">Adresse</label>
-      <input type="text" class="form-control" id="address" name="adresse" required [(ngModel)]="adresse" />
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="cp">Code Postal</label>
-      <input type="text" class="form-control" id="cp" name="cp" required [(ngModel)]="cp" />
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="city">Ville</label>
-      <input type="text" class="form-control" id="city" name="ville" required [(ngModel)]="ville" />
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="tel">Téléphone</label>
-      <input type="tel" class="form-control" id="tel" name="tel" required [(ngModel)]="tel" />
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="email">Email</label>
-      <input type="email" class="form-control" id="email" name="email" required [(ngModel)]="email" />
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-4 mb-3">
-      <label for="civility">Civilité</label>
-      <select class="form-control" id="civility" name="civilite" required [(ngModel)]="civilite">
-        <option value="">Choisir...</option>
-        <option value="M">Monsieur</option>
-        <option value="Mme">Madame</option>
-      </select>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="login">Login</label>
-      <input type="text" class="form-control" id="login" name="login" required [(ngModel)]="login" />
-    </div>
-    <div class="col-md-4 mb-3">
-      <label for="password">Mot de passe</label>
-      <input type="password" class="form-control" id="password" name="password" required [(ngModel)]="password" />
-    </div>
-  </div>
-  <button class="btn btn-primary" type="submit">Créer le compte</button>
-</form>
+<main class="container mt-4">
+    <form id="client-form" class="needs-validation" novalidate action="valide.html">
+
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="firstName">Prénom</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            name="prenom"
+            required
+          />
+          <div class="invalid-feedback">Entrer votre prénom</div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="lastName">Nom</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            name="nom"
+            required
+          />
+          <div class="invalid-feedback">Entrer votre nom</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="address">Adresse</label>
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            name="adresse"
+            required
+          />
+          <div class="invalid-feedback">Entrer votre adresse</div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="cp">Code Postal</label>
+          <input
+            type="text"
+            class="form-control"
+            id="cp"
+            name="cp"
+            required
+            pattern="\d{5}"
+          />
+          <div class="invalid-feedback">Entrer un code postal valide</div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <label for="city">Ville</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            name="ville"
+            required
+          />
+          <div class="invalid-feedback">Ville</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="tel">Téléphone</label>
+          <input
+            type="tel"
+            class="form-control"
+            id="tel"
+            name="tel"
+            required
+            pattern="^(\+33|0)[1-9](\d{2}){4}$"
+          />
+          <div class="invalid-feedback">
+            Entrer un numéro de téléphone valide
+          </div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            required
+          />
+          <div class="invalid-feedback">Entrer une adresse email valide</div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="civility">Civilité</label>
+          <select class="form-control" id="civility" name="civilite" required>
+            <option value="">Choisir...</option>
+            <option value="M">Monsieur</option>
+            <option value="Mme">Madame</option>
+          </select>
+          <div class="invalid-feedback">sélectionner votre civilité</div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="login">Login</label>
+          <input
+            type="text"
+            class="form-control"
+            id="login"
+            name="login"
+            required
+          />
+          <div class="invalid-feedback">Entrer un login.</div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="password">Mot de passe</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            required
+          />
+          <div class="invalid-feedback">Entrerr un mot de passe.</div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">Créer le compte</button>
+    </form>
+  </main>

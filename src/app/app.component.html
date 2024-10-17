@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application TP02</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire TP02</title>
+
+    <!-- Lien vers la Bootstrap pour pas que se soit trop moche -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
     <link
       class="logo"
       rel="icon"
@@ -15,23 +20,19 @@
     />
 
     <script src="js/javaScript.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
 
-
-</head>
-<body>
-    <app-header></app-header>
-    <div class="container mt-4">
-        <app-form (formSubmitted)="clientData = $event"></app-form>
-
-    </div>
+  <body>
     
-    <br><br>
-    <h2>Résumée des informations :</h2>
+      <app-header></app-header>
+      <app-form></app-form>
 
-    <div class="container mt-4">
-        <app-summary [clientData]="clientData"></app-summary>
-    </div>
-    <app-footer></app-footer>
-</body>
+      <h2>Résumé :</h2>
+    
+
+      <app-footer></app-footer>
+
+  </body>
 </html>
