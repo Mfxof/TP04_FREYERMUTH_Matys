@@ -1,2 +1,26 @@
-<p>product-filter works!</p>
-test
+<div class="container mt-4">
+    <h3 class="text-center">Filtrer les Produits</h3>
+    <div class="tags mb-3">
+        <span *ngFor="let tag of tags" 
+              [class.selected]="selectedTags.includes(tag)" 
+              (click)="toggleTag(tag)"
+              class="badge badge-secondary me-2" style="cursor: pointer;">
+            {{ tag }}
+        </span>
+    </div>
+
+    <h4>Trier par Tags</h4>
+    <div class="mb-3">
+        <label for="tag-select">Sélectionnez un tag:</label>
+        <select id="tag-select" class="form-select" (change)="changeSortByTag($event)">
+            <option value="">--Choisir un tag--</option>
+            <option *ngFor="let tag of tags" [value]="tag">{{ tag }}</option>
+        </select>
+    </div>
+
+    <h4>Trier par Prix</h4>
+    <div>
+        <button class="btn btn-primary me-2" (click)="changeSortOrder('asc')">Prix Croissant</button>
+        <button class="btn btn-danger" (click)="changeSortOrder('desc')">Prix Décroissant</button>
+    </div>
+</div>
