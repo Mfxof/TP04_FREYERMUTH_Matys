@@ -40,16 +40,34 @@ export class AppComponent {
     this.filterProducts();
   }
 
+  sortById(order: string) {
+    if (order === 'asc') {
+      this.filteredCatalogue.sort((a, b) => a.id - b.id);
+    } else {
+      this.filteredCatalogue.sort((a, b) => b.id - a.id);
+    }
+  }
+
+  sortAlphabetically(order: string) {
+    if (order === 'asc') {
+      this.filteredCatalogue.sort((a, b) => a.name.localeCompare(b.name));
+    } else {
+      this.filteredCatalogue.sort((a, b) => b.name.localeCompare(a.name));
+    }
+  }
+
   private filterProducts() {
     this.filteredCatalogue = this.catalogue.filter(produit =>
       this.selectedTags.length === 0 || this.selectedTags.some(tag => produit.tags.includes(tag))
     );
-    this.sortProducts();
+    this.sortProducts(); // Sort after filtering
   }
 
   private sortProducts() {
-    this.filteredCatalogue.sort((a, b) => 
-      this.sortOrder === 'asc' ? a.price - b.price : b.price - a.price
-    );
+    if (this.sortOrder === 'asc') {
+      this.filteredCatalogue.sort((a, b) => a.price - b.price);
+    } else {
+      this.filteredCatalogue.sort((a, b) => b.price - a.price);
+    }
   }
 }

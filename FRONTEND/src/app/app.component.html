@@ -26,10 +26,14 @@
 
   <div class="container mt-4">
     <app-product-filter
-      (filterChanged)="updateFilteredCatalogue($event)"
-      (sortChanged)="updateSortOrder($event)"
-      (tagSorted)="updateCatalogueByTag($event)"
-    ></app-product-filter>
+    (filterChanged)="updateFilteredCatalogue($event)"
+    (sortChanged)="updateSortOrder($event)"
+    (tagSorted)="updateCatalogueByTag($event)"
+    (sortById)="sortById($event.order)"
+    (sortAlphabetically)="sortAlphabetically($event.order)"
+  ></app-product-filter>
+  
+  
 
     <app-product-list [catalogue]="catalogue"></app-product-list>
   </div>

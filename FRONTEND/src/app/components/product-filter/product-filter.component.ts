@@ -11,6 +11,8 @@ export class ProductFilterComponent {
   @Output() filterChanged = new EventEmitter<string[]>();
   @Output() sortChanged = new EventEmitter<string>();
   @Output() tagSorted = new EventEmitter<string>();
+  @Output() sortById = new EventEmitter<{ order: string }>();
+  @Output() sortAlphabetically = new EventEmitter<{ order: string }>();
 
   tags = ['Animal', 'Véhicule', 'Nourriture'];
   selectedTags: string[] = [];
@@ -35,5 +37,13 @@ export class ProductFilterComponent {
     const target = event.target as HTMLSelectElement;
     const tag = target.value;
     this.tagSorted.emit(tag);
+  }
+
+  triggerSortById(order: string) {
+    this.sortById.emit({ order });
+  }
+
+  triggerSortAlphabetically(order: string) {
+    this.sortAlphabetically.emit({ order });
   }
 }

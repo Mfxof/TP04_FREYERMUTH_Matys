@@ -9,18 +9,23 @@
         </span>
     </div>
 
-    <h4>Trier par Tags</h4>
-    <div class="mb-3">
-        <label for="tag-select">Sélectionnez un tag:</label>
-        <select id="tag-select" class="form-select" (change)="changeSortByTag($event)">
-            <option value="">--Choisir un tag--</option>
-            <option *ngFor="let tag of tags" [value]="tag">{{ tag }}</option>
-        </select>
+    <h4>Trier par ID</h4>
+    <div class="d-flex mb-2">
+        <button class="btn btn-success button-margin" (click)="triggerSortById('asc')">ID Croissant</button>
+        <button class="btn btn-danger button-margin" (click)="triggerSortById('desc')">ID Décroissant</button>
     </div>
-
+    
+    <h4>Trier par Ordre Alphabétique</h4>
+    <div class="d-flex mb-2">
+        <button class="btn btn-info button-margin" (click)="triggerSortAlphabetically('asc')">A-Z</button>
+        <button class="btn btn-warning button-margin" (click)="triggerSortAlphabetically('desc')">Z-A</button>
+    </div>
+    
     <h4>Trier par Prix</h4>
-    <div>
-        <button class="btn btn-primary me-2" (click)="changeSortOrder('asc')">Prix Croissant</button>
+    <div class="d-flex mb-2">
+        <button class="btn button-margin btn-primary me-2" (click)="changeSortOrder('asc')">Prix Croissant</button>
         <button class="btn btn-danger" (click)="changeSortOrder('desc')">Prix Décroissant</button>
     </div>
+    
+    
 </div>
