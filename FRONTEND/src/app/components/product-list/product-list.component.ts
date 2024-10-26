@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CatalogueService } from '../../services/product.service';
 import { Produit } from '../../services/produit';
 
 @Component({
@@ -10,13 +9,9 @@ import { Produit } from '../../services/produit';
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  catalogue: Array<Produit> = [];
-
-  constructor(private catalogueService: CatalogueService) {}
+export class ProductListComponent implements OnInit {
+  @Input() catalogue: Produit[] = [];
 
   ngOnInit() {
-    this.catalogue = this.catalogueService.getCatalogue();
   }
-  
 }

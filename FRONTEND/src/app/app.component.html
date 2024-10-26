@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Magasin - TP03</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magasin - TP03</title>
 
-    <!-- Lien vers la Bootstrap pour pas que se soit trop moche -->
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
-    <link
-      class="logo"
-      rel="icon"
-      type="image/png"
-      href="image/tresBeauChat.jpg"
-    />
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    class="logo"
+    rel="icon"
+    type="image/png"
+    href="image/tresBeauChat.jpg"
+  />
 
-    <script src="js/javaScript.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/javaScript.js"></script>
+</head>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </head>
+<body>
+  <app-header></app-header>
 
-  <body>
-    <app-header></app-header>
+  <div class="container mt-4">
+    <app-product-filter
+      (filterChanged)="updateFilteredCatalogue($event)"
+      (sortChanged)="updateSortOrder($event)"
+      (tagSorted)="updateCatalogueByTag($event)"
+    ></app-product-filter>
 
-    <app-product-filter></app-product-filter>
-    <app-product-list></app-product-list>
+    <app-product-list [catalogue]="catalogue"></app-product-list>
+  </div>
 
-    <app-footer></app-footer>
-  </body>
+  <app-footer></app-footer>
+</body>
 </html>

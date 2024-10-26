@@ -35,6 +35,5 @@ export class ProductFilterComponent {
     const target = event.target as HTMLSelectElement;
     const tag = target.value;
     this.tagSorted.emit(tag);
-}
-
+  }
 }
