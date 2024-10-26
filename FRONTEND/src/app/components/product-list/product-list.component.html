@@ -10,11 +10,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products">
-                <td>{{ product.id }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.tags }}</td>
-                <td>{{ product.price }} €</td>
+            <tr *ngFor="let produit of catalogue">
+                <td>{{ produit.id }}</td>
+                <td>{{ produit.name }}</td>
+                <td>{{ produit.tags.join(', ') }}</td>
+                <td>{{ produit.price }} €</td>
             </tr>
         </tbody>
     </table>
