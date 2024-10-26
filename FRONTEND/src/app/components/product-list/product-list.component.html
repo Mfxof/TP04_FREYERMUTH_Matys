@@ -1,1 +1,21 @@
-<p>product-list works!</p>
+<div class="container mt-4">
+    <h2 class="text-center">Liste des Produits</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Tags</th>
+                <th>Prix</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products">
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.tags }}</td>
+                <td>{{ product.price }} €</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
