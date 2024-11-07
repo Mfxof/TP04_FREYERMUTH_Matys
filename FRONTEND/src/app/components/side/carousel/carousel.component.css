@@ -1,0 +1,68 @@
+/* Carousel styles */
+/* .carousel {
+  margin-top: 90px;
+} */
+
+.carousel-item {
+  height: 500px;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  background: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  transition: background 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-navigation-text {
+  position: absolute;
+  bottom: 15px;
+  color: #1a1a1a;
+  font-weight: bold;
+  font-family: "Rajdhani", sans-serif;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.carousel-indicators button.active {
+  background-color: #ff3333;
+  border-color: #ffffff;
+  transform: scale(1.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

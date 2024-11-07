@@ -1,0 +1,37 @@
+.footer {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 40px 0;
+}
+
+.social-icon {
+  color: #ffffff;
+  font-size: 24px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #ff3333;
+}
+
+.footer-content {
+  padding: 20px 0;
+}
+
+.copyright {
+  color: #ff3333;
+  font-weight: bold;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff3333;
+}
