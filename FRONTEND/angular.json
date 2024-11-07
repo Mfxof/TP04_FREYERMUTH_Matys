@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "FRONTEND": {
+    "TP04-FREYERMUTH-MATYS": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/frontend",
+            "outputPath": "dist/tp04-freyermuth-matys",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "FRONTEND:build:production"
+              "buildTarget": "TP04-FREYERMUTH-MATYS:build:production"
             },
             "development": {
-              "buildTarget": "FRONTEND:build:development"
+              "buildTarget": "TP04-FREYERMUTH-MATYS:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,8 +92,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "d1a4be55-4818-4220-8c4a-8b767bc9aecc"
   }
 }
