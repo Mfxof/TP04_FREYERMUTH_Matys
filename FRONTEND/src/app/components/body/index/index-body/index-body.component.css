@@ -74,6 +74,7 @@ body {
   color: #ff3333; /* Rouge */
 }
 
+
 /* Liste de produits */
 .product-list {
   display: grid;
@@ -88,6 +89,10 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Aligne les éléments en haut et en bas */
+  height: 100%; /* Assure que la boîte prend toute la hauteur disponible */
 }
 
 .product-image {
@@ -111,6 +116,7 @@ body {
   font-size: 1.2rem;
   color: #ff3333; /* Rouge */
   margin: 10px 0;
+  margin-top: auto; /* Assure que le prix est collé en bas */
 }
 
 .btn-buy {
@@ -121,6 +127,7 @@ body {
   font-weight: bold;
   border-radius: 5px;
   transition: background-color 0.3s;
+  margin-top: 10px; /* Espacement entre le prix et le bouton */
 }
 
 .btn-buy:hover {
