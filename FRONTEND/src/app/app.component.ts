@@ -5,11 +5,19 @@ import { HeaderComponent } from './components/side/header/header.component';
 import { FooterComponent } from './components/side/footer/footer.component';
 import { CarouselComponent } from './components/side/carousel/carousel.component';
 import { IndexBodyComponent } from './components/body/index/index-body/index-body.component';
+import { ProductListComponent } from './components/body/shop/product-list/product-list.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, CarouselComponent, IndexBodyComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    CarouselComponent,
+    IndexBodyComponent,
+    ProductListComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

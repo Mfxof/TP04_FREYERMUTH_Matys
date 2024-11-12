@@ -1,1 +1,14 @@
 <p>product-list works!</p>
+
+<hr />
+<div class="catalogue">
+  <div *ngFor="let produit of produits" class="produit">
+    <h2>{{ produit.name }}</h2>
+    <img [src]="produit.image" alt="{{ produit.name }}" />
+    <p>{{ produit.description }}</p>
+    <hr />
+    <p class="price">Prix : {{ produit.price }}€</p>
+  </div>
+</div>
+
+<p>TEST</p>
