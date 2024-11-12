@@ -1,3 +1,8 @@
+# Refonte toral du site
+
+## Trello du TP :
+- https://trello.com/b/bxXCIlLX/tp04-web-si
+
 # A faire
 Service carte signal cartes pour avoir un tableau de cartes
 
