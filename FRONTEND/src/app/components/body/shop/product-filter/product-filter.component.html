@@ -1,1 +1,34 @@
-<p>product-filter works!</p>
+<form>
+  <p>Filtrer les produits :</p>
+  <input
+    type="text"
+    placeholder="Nom du produit"
+    [(ngModel)]="searchCriteria.name"
+    name="name"
+    (input)="onSearch()"
+  />
+  <input
+    type="number"
+    placeholder="Prix minimum"
+    [(ngModel)]="searchCriteria.minPrice"
+    name="minPrice"
+    (input)="onSearch()"
+  />
+  <input
+    type="number"
+    placeholder="Prix maximum"
+    [(ngModel)]="searchCriteria.maxPrice"
+    name="maxPrice"
+    (input)="onSearch()"
+  />
+  <select
+    [(ngModel)]="searchCriteria.category"
+    name="category"
+    (change)="onSearch()"
+  >
+    <option value="">Toutes les catégories</option>
+    <option *ngFor="let category of categories" [value]="category">
+      {{ category }}
+    </option>
+  </select>
+</form>

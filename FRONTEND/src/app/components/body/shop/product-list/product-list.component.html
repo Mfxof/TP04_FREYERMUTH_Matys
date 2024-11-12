@@ -1,5 +1,6 @@
-<p>product-list works!</p>
-
+<app-product-filter
+  (searchResults)="onSearchResults($event)"
+></app-product-filter>
 <hr />
 <div class="catalogue">
   <div *ngFor="let produit of produits" class="produit">
@@ -11,4 +12,4 @@
   </div>
 </div>
 
-<p>TEST</p>
+<p>Article</p>
