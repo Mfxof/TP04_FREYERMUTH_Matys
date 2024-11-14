@@ -1,34 +1,46 @@
 <form>
   <p>Filtrer les produits :</p>
-  <input
-    type="text"
-    placeholder="Nom du produit"
-    [(ngModel)]="searchCriteria.name"
-    name="name"
-    (input)="onSearch()"
-  />
-  <input
-    type="number"
-    placeholder="Prix minimum"
-    [(ngModel)]="searchCriteria.minPrice"
-    name="minPrice"
-    (input)="onSearch()"
-  />
-  <input
-    type="number"
-    placeholder="Prix maximum"
-    [(ngModel)]="searchCriteria.maxPrice"
-    name="maxPrice"
-    (input)="onSearch()"
-  />
-  <select
-    [(ngModel)]="searchCriteria.category"
-    name="category"
-    (change)="onSearch()"
-  >
-    <option value="">Toutes les catégories</option>
-    <option *ngFor="let category of categories" [value]="category">
-      {{ category }}
-    </option>
-  </select>
+  <div class="input-group">
+    <i class="fas fa-search"></i>
+    <input
+      type="text"
+      placeholder="Nom du produit"
+      [(ngModel)]="searchCriteria.name"
+      name="name"
+      (input)="onSearch()"
+    />
+  </div>
+  <div class="input-group">
+    <i class="fas fa-tags"></i>
+    <select
+      [(ngModel)]="searchCriteria.category"
+      name="category"
+      (change)="onSearch()"
+    >
+      <option value="">Toutes les catégories</option>
+      <option *ngFor="let category of categories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+  </div>
+  <div class="input-group">
+    <i class="fas fa-dollar-sign"></i>
+    <input
+      type="number"
+      placeholder="Prix minimum"
+      [(ngModel)]="searchCriteria.minPrice"
+      name="minPrice"
+      (input)="onSearch()"
+    />
+  </div>
+  <div class="input-group">
+    <i class="fas fa-dollar-sign"></i>
+    <input
+      type="number"
+      placeholder="Prix maximum"
+      [(ngModel)]="searchCriteria.maxPrice"
+      name="maxPrice"
+      (input)="onSearch()"
+    />
+  </div>
 </form>

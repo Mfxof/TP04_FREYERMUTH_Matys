@@ -5,8 +5,13 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
 })
 export class HeaderComponent {
+  currentSection: string = 'home';
 
+  showSection(section: string): void {
+    this.currentSection = section;
+    console.log(this.currentSection);
+  }
 }

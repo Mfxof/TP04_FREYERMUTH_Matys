@@ -1,0 +1,796 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Gel Douche Lavande",
+      "description": "Un gel douche délicatement parfumé à la lavande pour une sensation de fraîcheur et de bien-être.",
+      "price": 9.99,
+      "category": "Soins du Corps",
+      "image": "https://cdn.pixabay.com/photo/2017/09/04/13/30/travel-2713982_1280.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Parfum Femme Élégance",
+      "description": "Un parfum floral et fruité qui vous accompagnera toute la journée.",
+      "price": 39.99,
+      "category": "Parfumerie",
+      "image": "https://as1.ftcdn.net/v2/jpg/05/67/49/10/1000_F_567491096_NAwRcgSINQs0ghpwlMGKWoiX639OIaW0.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Crème Hydratante au Miel",
+      "description": "Une crème hydratante au miel pour nourrir et apaiser votre peau.",
+      "price": 14.99,
+      "category": "Soins du Corps",
+      "image": "https://as2.ftcdn.net/v2/jpg/03/93/05/17/1000_F_393051773_3wiH2XDqXTwt4FuH2vHrj72C9FSV5ijy.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Shampooing Réparateur",
+      "description": "Un shampooing réparateur pour des cheveux éclatants de santé.",
+      "price": 12.99,
+      "category": "Soins des Cheveux",
+      "image": "https://media.istockphoto.com/id/2161954559/fr/photo/shower-gel-or-shampoo-on-a-white-background-with-sun-light.jpg?s=1024x1024&w=is&k=20&c=8KVzviepq9tKfBBEc5jjUUE9lZDjg_k78BdXYZHhce4="
+    },
+    {
+      "id": 5,
+      "name": "Parfum Homme Force",
+      "description": "Un parfum masculin et puissant, pour un homme audacieux.",
+      "price": 49.99,
+      "category": "Parfumerie",
+      "image": "https://as2.ftcdn.net/v2/jpg/06/12/67/15/1000_F_612671575_LzaLcH8u1od4G2W1kztt6jBi4Qaa8b2G.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Huile Essentielle de Menthe Poivrée",
+      "description": "Une huile essentielle rafraîchissante pour apaiser votre esprit et votre corps.",
+      "price": 19.99,
+      "category": "Huiles Essentielles",
+      "image": "https://as1.ftcdn.net/v2/jpg/07/90/75/64/1000_F_790756427_ckxW6Y19Q2wKuu9R1LU4P7Tr4MYISQZX.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Déodorant Naturel",
+      "description": "Un déodorant naturel pour un parfum discret et une protection toute la journée.",
+      "price": 7.99,
+      "category": "Hygiène",
+      "image": "https://media.istockphoto.com/id/92082556/fr/photo/asperger-d%C3%A9odorant.jpg?s=1024x1024&w=is&k=20&c=kuoWDmwjFtmwhGlO503l9CQC7jhn-ofFJgMY_7J0igg="
+    },
+    {
+      "id": 8,
+      "name": "Crème de Nuit Anti-Âge",
+      "description": "Une crème de nuit pour réparer la peau et lutter contre les signes de l'âge.",
+      "price": 34.99,
+      "category": "Soins du Visage",
+      "image": "https://as1.ftcdn.net/v2/jpg/01/31/19/88/1000_F_131198880_YS4MwbC4vPtITdQoaLMoYd3hpTNZ0OUP.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Lotion Après-Soleil",
+      "description": "Lotion apaisante après exposition au soleil, idéale pour hydrater la peau.",
+      "price": 15.99,
+      "category": "Soins du Corps",
+      "image": "https://as1.ftcdn.net/v2/jpg/09/46/00/12/1000_F_946001290_iMPJ7bIIeRfPvWbIin3Pwy8eqoIp1E29.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Crème Visage Revitalisante",
+      "description": "Une crème de jour pour revitaliser et rafraîchir votre peau.",
+      "price": 24.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 11,
+      "name": "Gel Douche Orange",
+      "description": "Un gel douche énergisant au parfum d'orange pour un réveil tonifiant.",
+      "price": 8.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 12,
+      "name": "Parfum Bois de Cèdre",
+      "description": "Un parfum riche et boisé pour une sensation de force et de mystère.",
+      "price": 54.99,
+      "category": "Parfumerie",
+      "image": "https://as2.ftcdn.net/v2/jpg/04/20/61/83/1000_F_420618303_o4YiFY9vn8PfnFyI9nTmX70EGapD6Xik.jpg"
+    },
+    {
+      "id": 13,
+      "name": "Shampooing Volume",
+      "description": "Shampooing pour donner du volume et de la légèreté aux cheveux fins.",
+      "price": 10.99,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 14,
+      "name": "Crème Protectrice SPF 50",
+      "description": "Crème solaire haute protection pour protéger la peau des rayons UV.",
+      "price": 21.99,
+      "category": "Soins du Corps",
+      "image": "https://as2.ftcdn.net/v2/jpg/10/75/01/47/1000_F_1075014731_y4pNgjnlnkSUTprkKPUfeWK4ecis63jm.jpg"
+    },
+    {
+      "id": 15,
+      "name": "Parfum Femme Passion",
+      "description": "Un parfum sensuel et envoûtant pour les femmes audacieuses.",
+      "price": 45.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 16,
+      "name": "Baume à Lèvres Nourrissant",
+      "description": "Un baume réparateur pour hydrater et nourrir les lèvres sèches.",
+      "price": 6.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 17,
+      "name": "Huile Essentielle de Lavande",
+      "description": "Huile essentielle apaisante pour soulager le stress et favoriser le sommeil.",
+      "price": 18.99,
+      "category": "Huiles Essentielles",
+      "image": "https://www.w3schools.com/w3images/woods.jpg"
+    },
+    {
+      "id": 18,
+      "name": "Déodorant Roll-On",
+      "description": "Déodorant roll-on avec une protection longue durée et un parfum frais.",
+      "price": 7.49,
+      "category": "Hygiène",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 19,
+      "name": "Crème Mains Réparatrice",
+      "description": "Crème réparatrice pour nourrir et adoucir les mains sèches.",
+      "price": 9.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 20,
+      "name": "Shampooing Antipelliculaire",
+      "description": "Shampooing spécial pour combattre les pellicules et rééquilibrer le cuir chevelu.",
+      "price": 11.99,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 21,
+      "name": "Crème Anti-Rides",
+      "description": "Crème de jour anti-rides pour une peau plus lisse et plus jeune.",
+      "price": 34.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 22,
+      "name": "Parfum Masculin Sport",
+      "description": "Un parfum dynamique et frais pour les hommes actifs.",
+      "price": 39.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 23,
+      "name": "Lait Corporel Hydratant",
+      "description": "Un lait corporel hydratant et nourrissant pour une peau douce toute la journée.",
+      "price": 13.99,
+      "category": "Soins du Corps",
+      "image": "https://as2.ftcdn.net/v2/jpg/10/16/10/75/1000_F_1016107548_iso6OuHW0Sq7by79KdQZ4M2tMO1N0sza.jpg"
+    },
+    {
+      "id": 24,
+      "name": "Crème de Jour Anti-Âge",
+      "description": "Crème de jour pour lutter contre les signes du vieillissement et redonner de l'éclat.",
+      "price": 29.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 25,
+      "name": "Shampooing Réparateur au Cacao",
+      "description": "Shampooing réparateur à l'extrait de cacao pour des cheveux nourris et brillants.",
+      "price": 12.49,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 26,
+      "name": "Crème Anticellulite",
+      "description": "Crème ciblée pour réduire l'apparence de la cellulite et raffermir la peau.",
+      "price": 19.99,
+      "category": "Soins du Corps",
+      "image": "https://as2.ftcdn.net/v2/jpg/07/52/22/17/1000_F_752221742_7vXm5LyPKX09JTITgJSJbsc7qE61EvFg.jpg"
+    },
+    {
+      "id": 27,
+      "name": "Parfum Masculin Intense",
+      "description": "Un parfum audacieux et intense, pour l'homme qui aime se faire remarquer.",
+      "price": 49.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 28,
+      "name": "Gommage Corporel au Sucre",
+      "description": "Exfoliant corporel au sucre pour une peau douce et éclatante.",
+      "price": 14.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/woods.jpg"
+    },
+    {
+      "id": 29,
+      "name": "Shampooing Lissant",
+      "description": "Shampooing pour lisser les cheveux et réduire les frisottis.",
+      "price": 11.49,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 30,
+      "name": "Lait Démaquillant",
+      "description": "Lait démaquillant doux pour enlever le maquillage sans irriter la peau.",
+      "price": 8.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 31,
+      "name": "Crème Protectrice Nuit",
+      "description": "Crème réparatrice de nuit pour une peau plus éclatante au matin.",
+      "price": 22.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 32,
+      "name": "Shampooing Antichute",
+      "description": "Shampooing pour renforcer les cheveux et prévenir leur chute.",
+      "price": 13.49,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 33,
+      "name": "Huile Essentielle d'Ylang-Ylang",
+      "description": "Huile essentielle aux propriétés relaxantes et apaisantes.",
+      "price": 21.99,
+      "category": "Huiles Essentielles",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 34,
+      "name": "Crème Anti-Taches",
+      "description": "Crème pour uniformiser le teint et réduire l'apparence des taches.",
+      "price": 32.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 35,
+      "name": "Parfum Fraîcheur Marine",
+      "description": "Un parfum frais et léger, inspiré des vagues de l'océan.",
+      "price": 43.99,
+      "category": "Parfumerie",
+      "image": "https://as2.ftcdn.net/v2/jpg/10/63/51/65/1000_F_1063516553_QeCaNwtRgATNzAV0DMHjFtlZyoBvdNEH.jpg"
+    },
+    {
+      "id": 36,
+      "name": "Gel Douche Fraîcheur Menthe",
+      "description": "Gel douche revitalisant à la menthe pour une sensation de fraîcheur intense.",
+      "price": 9.49,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 37,
+      "name": "Lotion Tonifiante au Thé Vert",
+      "description": "Lotion tonifiante et rafraîchissante pour revitaliser la peau.",
+      "price": 17.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 38,
+      "name": "Shampooing Nutrition Intense",
+      "description": "Shampooing nourrissant pour des cheveux souples et brillants.",
+      "price": 14.99,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 39,
+      "name": "Crème Contour des Yeux",
+      "description": "Crème anti-cernes pour réduire les signes de fatigue autour des yeux.",
+      "price": 26.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 40,
+      "name": "Déodorant Spray Écologique",
+      "description": "Déodorant spray à base d'ingrédients naturels pour une protection durable.",
+      "price": 9.49,
+      "category": "Hygiène",
+      "image": "https://www.w3schools.com/w3images/woods.jpg"
+    },
+    {
+      "id": 41,
+      "name": "Crème Équilibrante Peaux Grasses",
+      "description": "Crème spécialement formulée pour les peaux grasses et mixtes.",
+      "price": 28.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 42,
+      "name": "Shampooing Clarifiant",
+      "description": "Shampooing clarifiant pour éliminer les résidus de produits capillaires.",
+      "price": 15.49,
+      "category": "Soins des Cheveux",
+      "image": "https://as1.ftcdn.net/v2/jpg/10/44/04/50/1000_F_1044045060_qbZ0VYBHNM7DgHlD1ltqBpb2tAud4BLD.jpg"
+    },
+    {
+      "id": 43,
+      "name": "Huile de Ricin Bio",
+      "description": "Huile de ricin pure et bio pour renforcer les cheveux et les ongles.",
+      "price": 13.99,
+      "category": "Huiles Essentielles",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 44,
+      "name": "Parfum Fleur d'Oranger",
+      "description": "Un parfum floral doux aux notes de fleur d'oranger pour une sensation de fraîcheur.",
+      "price": 41.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 45,
+      "name": "Gommage Visage au Café",
+      "description": "Exfoliant pour le visage à base de café pour revitaliser la peau en douceur.",
+      "price": 11.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 46,
+      "name": "Crème pour Pieds Secs",
+      "description": "Crème nourrissante pour soulager les pieds secs et fissurés.",
+      "price": 9.49,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 47,
+      "name": "Shampooing Brillance au Citron",
+      "description": "Shampooing éclat au citron pour des cheveux brillants et pleins de vitalité.",
+      "price": 12.99,
+      "category": "Soins des Cheveux",
+      "image": "https://as1.ftcdn.net/v2/jpg/06/71/15/14/1000_F_671151499_uFGhpn2s0KrYDbW8rbfbl800Pk8OhEUd.jpg"
+    },
+    {
+      "id": 48,
+      "name": "Parfum Oud Bois de Rose",
+      "description": "Un parfum oriental avec des notes boisées et florales de rose et d'oud.",
+      "price": 59.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 49,
+      "name": "Sérum Hydratant Intensif",
+      "description": "Sérum hydratant pour une peau repulpée et éclatante.",
+      "price": 37.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/woods.jpg"
+    },
+    {
+      "id": 50,
+      "name": "Crème Après-Rasage",
+      "description": "Crème apaisante après rasage pour éviter les irritations et nourrir la peau.",
+      "price": 18.49,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 51,
+      "name": "Crème Hydratante SPF 30",
+      "description": "Crème hydratante avec protection solaire pour une peau douce et protégée.",
+      "price": 23.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 52,
+      "name": "Masque Purifiant à l'Argile",
+      "description": "Masque en argile pour purifier la peau en profondeur et réduire les pores.",
+      "price": 19.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/woods.jpg"
+    },
+    {
+      "id": 53,
+      "name": "Shampooing Réparateur à l'Avocat",
+      "description": "Shampooing réparateur pour nourrir et réparer les cheveux secs et abîmés.",
+      "price": 16.99,
+      "category": "Soins des Cheveux",
+      "image": "https://as2.ftcdn.net/v2/jpg/09/66/95/53/1000_F_966955326_XQGQTuAtfX8Mt7AW99Cu3Fy0NUsRFsdQ.jpg"
+    },
+    {
+      "id": 54,
+      "name": "Lotion Apaisante à l'Aloe Vera",
+      "description": "Lotion hydratante à base d'aloe vera pour calmer et apaiser la peau.",
+      "price": 12.49,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 55,
+      "name": "Crème Solaire SPF 50",
+      "description": "Crème solaire haute protection pour prévenir les coups de soleil et le vieillissement de la peau.",
+      "price": 28.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 56,
+      "name": "Gommage Corporel au Sucre",
+      "description": "Gommage doux au sucre pour exfolier la peau et la rendre lisse et douce.",
+      "price": 17.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 57,
+      "name": "Shampooing Sec à la Noix de Coco",
+      "description": "Shampooing sec pour rafraîchir et donner du volume aux cheveux.",
+      "price": 14.49,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 58,
+      "name": "Sérum Anti-Âge",
+      "description": "Sérum anti-âge pour réduire les rides et raffermir la peau.",
+      "price": 39.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 59,
+      "name": "Crème Apaisante Après-Soleil",
+      "description": "Crème réparatrice et apaisante après une exposition au soleil.",
+      "price": 24.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 60,
+      "name": "Shampooing Anti-Pelliculaire",
+      "description": "Shampooing pour traiter et prévenir les pellicules.",
+      "price": 13.99,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 61,
+      "name": "Crème Anti-Rides Contour des Yeux",
+      "description": "Crème pour traiter les rides et ridules autour des yeux.",
+      "price": 29.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 62,
+      "name": "Parfum Ambre Vanille",
+      "description": "Un parfum chaud et sucré aux notes d'ambre et de vanille.",
+      "price": 46.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 63,
+      "name": "Crème Hydratante Antioxydante",
+      "description": "Crème riche en antioxydants pour protéger la peau des agressions extérieures.",
+      "price": 34.99,
+      "category": "Soins du Visage",
+      "image": "https://as2.ftcdn.net/v2/jpg/09/25/88/37/1000_F_925883709_KCcygIZVSjYXkMPJrntxfaloa4q3lwVT.jpg"
+    },
+    {
+      "id": 64,
+      "name": "Shampooing Lissant au Karité",
+      "description": "Shampooing lissant pour des cheveux doux, brillants et sans frisottis.",
+      "price": 18.99,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 65,
+      "name": "Gel Douche à la Lavande",
+      "description": "Gel douche relaxant aux huiles essentielles de lavande pour une sensation de bien-être.",
+      "price": 11.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 66,
+      "name": "Lotion Apaisante au Calendula",
+      "description": "Lotion à base de calendula pour apaiser et hydrater les peaux sensibles.",
+      "price": 15.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 67,
+      "name": "Sérum Anti-Imperfections",
+      "description": "Sérum ciblé pour traiter les imperfections et réguler la production de sébum.",
+      "price": 24.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 68,
+      "name": "Crème de Nuit Réparatrice",
+      "description": "Crème de nuit réparatrice pour une peau régénérée au matin.",
+      "price": 22.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 69,
+      "name": "Shampooing Hydratant au Miel",
+      "description": "Shampooing hydratant au miel pour des cheveux nourris et doux.",
+      "price": 12.49,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 70,
+      "name": "Parfum Fleurs de Jasmin",
+      "description": "Un parfum floral doux et envoûtant de fleurs de jasmin.",
+      "price": 52.99,
+      "category": "Parfumerie",
+      "image": "https://as2.ftcdn.net/v2/jpg/10/54/54/33/1000_F_1054543350_5vQlzCrbHZOhrjokpJLKjci1S4Tt4XUk.jpg"
+    },
+    {
+      "id": 71,
+      "name": "Lotion de Nuit Régénérante",
+      "description": "Lotion réparatrice pour la peau pendant la nuit, favorisant la régénération cellulaire.",
+      "price": 26.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 72,
+      "name": "Crème Solaire Enfants SPF 50+",
+      "description": "Crème solaire spécialement formulée pour la peau délicate des enfants.",
+      "price": 19.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 73,
+      "name": "Shampooing Volume au Romarin",
+      "description": "Shampooing au romarin pour apporter du volume et de la texture aux cheveux fins.",
+      "price": 17.99,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/woods.jpg"
+    },
+    {
+      "id": 74,
+      "name": "Crème Anti-Cellulite",
+      "description": "Crème pour réduire l'apparence de la cellulite et améliorer la texture de la peau.",
+      "price": 30.99,
+      "category": "Soins du Corps",
+      "image": "https://as1.ftcdn.net/v2/jpg/09/94/07/24/1000_F_994072459_xvgC7ehJqb55ACSounlLnk3Ds2dLShCh.jpg"
+    },
+    {
+      "id": 75,
+      "name": "Masque Capillaire Réparateur",
+      "description": "Masque nourrissant pour réparer les cheveux secs et abîmés.",
+      "price": 22.49,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 76,
+      "name": "Crème Solide Hydratante",
+      "description": "Crème solide à emporter pour une hydratation intense et rapide à tout moment.",
+      "price": 15.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 77,
+      "name": "Parfum Épicé Citron Gingembre",
+      "description": "Un parfum vivifiant et énergisant aux notes de citron et gingembre.",
+      "price": 55.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 78,
+      "name": "Crème Contour des Yeux au Collagène",
+      "description": "Crème anti-âge pour traiter le contour des yeux avec du collagène.",
+      "price": 34.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 79,
+      "name": "Shampooing Légèreté à la Menthe",
+      "description": "Shampooing rafraîchissant à la menthe pour une sensation de légèreté et de fraîcheur.",
+      "price": 13.49,
+      "category": "Soins des Cheveux",
+      "image": "https://as1.ftcdn.net/v2/jpg/10/50/30/20/1000_F_1050302061_JKhJQAFOCUQnEMKvnWI3KMNZVqRFHrVQ.jpg"
+    },
+    {
+      "id": 80,
+      "name": "Lotion Tonique au Thé Vert",
+      "description": "Lotion tonique rafraîchissante et anti-oxydante à base de thé vert.",
+      "price": 16.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 81,
+      "name": "Gel Douche Gourmand au Miel",
+      "description": "Gel douche doux et parfumé au miel, pour un moment agréable sous la douche.",
+      "price": 12.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 82,
+      "name": "Sérum Revitalisant au Rétinol",
+      "description": "Sérum au rétinol pour lutter contre les signes du vieillissement et revitaliser la peau.",
+      "price": 36.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 83,
+      "name": "Crème Apaisante à la Camomille",
+      "description": "Crème calmante pour les peaux sensibles, avec des extraits de camomille.",
+      "price": 19.49,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 84,
+      "name": "Parfum Bois de Cèdre",
+      "description": "Un parfum boisée et chaleureuse aux notes de cèdre et de musc.",
+      "price": 58.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 85,
+      "name": "Shampooing Doux à la Camomille",
+      "description": "Shampooing doux et apaisant à base de camomille pour cheveux fins et fragiles.",
+      "price": 13.99,
+      "category": "Soins des Cheveux",
+      "image": "https://as1.ftcdn.net/v2/jpg/10/57/77/16/1000_F_1057771626_01p0EuQA9b9QVU98anZGBBZuArPIxGPH.jpg"
+    },
+    {
+      "id": 86,
+      "name": "Crème Revitalisante au Ginseng",
+      "description": "Crème énergisante et revitalisante pour un teint éclatant et frais.",
+      "price": 29.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 87,
+      "name": "Gel Douche Exfoliant au Café",
+      "description": "Gel douche exfoliant aux grains de café pour un effet tonifiant et énergisant.",
+      "price": 14.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 88,
+      "name": "Shampooing Anti-Chute à la Biotine",
+      "description": "Shampooing stimulant pour aider à prévenir la chute des cheveux grâce à la biotine.",
+      "price": 19.99,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/rock.jpg"
+    },
+    {
+      "id": 89,
+      "name": "Sérum Hydratant à l'Acide Hyaluronique",
+      "description": "Sérum ultra-hydratant à base d'acide hyaluronique pour une peau repulpée et éclatante.",
+      "price": 38.99,
+      "category": "Soins du Visage",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    },
+    {
+      "id": 90,
+      "name": "Parfum Floral Frais",
+      "description": "Parfum léger et floral avec des notes de jasmin, de rose et de violette.",
+      "price": 47.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/snow.jpg"
+    },
+    {
+      "id": 91,
+      "name": "Crème de Jour Antirides",
+      "description": "Crème de jour enrichie en peptides pour réduire les rides et protéger la peau.",
+      "price": 31.99,
+      "category": "Soins du Visage",
+      "image": "https://as2.ftcdn.net/v2/jpg/09/99/32/37/1000_F_999323711_BZYNDqyVDqHubjG1dhWOVXrnGxmuazE4.jpg"
+    },
+    {
+      "id": 92,
+      "name": "Shampooing Coloration au Bhringraj",
+      "description": "Shampooing naturel au Bhringraj pour maintenir la couleur et la brillance des cheveux.",
+      "price": 18.99,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 94,
+      "name": "Parfum Oriental Epicé",
+      "description": "Parfum oriental intense avec des notes d'épices et de bois précieux.",
+      "price": 60.99,
+      "category": "Parfumerie",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 95,
+      "name": "Crème Démaquillante Nourrissante",
+      "description": "Crème démaquillante douce et nourrissante pour éliminer le maquillage sans agresser la peau.",
+      "price": 17.99,
+      "category": "Soins du Visage",
+      "image": "https://cdn.pixabay.com/photo/2016/07/26/16/48/cosmetics-1543276_1280.jpg"
+    },
+    {
+      "id": 96,
+      "name": "Shampooing Apaisant à la Lavande",
+      "description": "Shampooing doux à la lavande pour apaiser le cuir chevelu et favoriser la relaxation.",
+      "price": 16.99,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/mountains.jpg"
+    },
+    {
+      "id": 97,
+      "name": "Crème de Nuit Anti-Âge",
+      "description": "Crème de nuit régénérante et réparatrice, pour une peau plus jeune au réveil.",
+      "price": 34.99,
+      "category": "Soins du Visage",
+      "image": "https://as2.ftcdn.net/v2/jpg/00/45/72/51/1000_F_45725157_pZ8jkzYT34m7EOLLWDvRKQFEfSw4Cdhr.jpg"
+    },
+    {
+      "id": 98,
+      "name": "Gel Douche Revigorant au Citron",
+      "description": "Gel douche énergisant avec des agrumes pour un réveil tonifiant.",
+      "price": 13.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/lights.jpg"
+    },
+    {
+      "id": 99,
+      "name": "Shampooing Doux Hydratant à la Lavande",
+      "description": "Shampooing hydratant et apaisant à la lavande, idéal pour les cheveux secs.",
+      "price": 14.49,
+      "category": "Soins des Cheveux",
+      "image": "https://www.w3schools.com/w3images/fjords.jpg"
+    },
+    {
+      "id": 100,
+      "name": "Crème Anti-Transpiration",
+      "description": "Crème pour réguler la transpiration et maintenir la peau fraîche toute la journée.",
+      "price": 21.99,
+      "category": "Soins du Corps",
+      "image": "https://www.w3schools.com/w3images/forest.jpg"
+    }
+  ]
+}

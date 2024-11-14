@@ -1,15 +1,22 @@
-<app-product-filter
-  (searchResults)="onSearchResults($event)"
-></app-product-filter>
-<hr />
-<div class="catalogue">
-  <div *ngFor="let produit of produits" class="produit">
-    <h2>{{ produit.name }}</h2>
-    <img [src]="produit.image" alt="{{ produit.name }}" />
-    <p>{{ produit.description }}</p>
-    <hr />
-    <p class="price">Prix : {{ produit.price }}€</p>
+<div class="nos-produit">
+  <h3>Nos produits</h3>
+  <p>
+    Découvrez nos dernières produits, avec des produits de soin et de bien-être
+    qui répondent à vos besoins de tous les jours.
+  </p>
+
+  <app-product-filter
+    (searchResults)="onSearchResults($event)"
+  ></app-product-filter>
+  <hr />
+  <div class="catalogue">
+    <div *ngFor="let produit of produits" class="produit">
+      <img [src]="produit.image" alt="{{ produit.name }}" />
+      <h2>{{ produit.name }}</h2>
+      <p>{{ produit.description }}</p>
+      <hr />
+      <p class="price">Prix : {{ produit.price }}€</p>
+      <a href="#" class="btn-buy">Acheter</a>
+    </div>
   </div>
 </div>
-
-<p>Article</p>

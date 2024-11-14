@@ -23,20 +23,33 @@
               class="collapse navbar-collapse justify-content-end"
               id="navbarNav"
             >
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Accueil</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Boutique</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Nouveautés</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
-                </li>
-              </ul>
+              <nav class="navbar navbar-expand-lg">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" (click)="showSection('home')"
+                      >Accueil</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" (click)="showSection('shop')"
+                      >Boutique</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" (click)="showSection('new')"
+                      >Nouveautés</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="#"
+                      (click)="showSection('contact')"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </nav>
@@ -44,3 +57,23 @@
     </div>
   </div>
 </header>
+
+<div *ngIf="currentSection == 'home'">
+  <h2>Accueil</h2>
+  <p>Bienvenue sur notre site !</p>
+</div>
+
+<div *ngIf="currentSection === 'shop'">
+  <h2>Boutique</h2>
+  <p>Découvrez nos produits !</p>
+</div>
+
+<div *ngIf="currentSection === 'new'">
+  <h2>Nouveautés</h2>
+  <p>Les dernières nouveautés !</p>
+</div>
+
+<div *ngIf="currentSection === 'contact'">
+  <h2>Contact</h2>
+  <p>Contactez-nous pour plus d'informations.</p>
+</div>
