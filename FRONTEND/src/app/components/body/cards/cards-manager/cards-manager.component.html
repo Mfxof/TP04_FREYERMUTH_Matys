@@ -1,0 +1,65 @@
+<div class="add-card-form">
+  <h3>Ajouter une nouvelle carte</h3>
+  <input type="text" placeholder="Nom du titulaire" id="cardHolderName" />
+  <input type="text" placeholder="Numéro de la carte" id="cardNumber" />
+  <input type="text" placeholder="Date d'expiration (MM/AA)" id="expiryDate" />
+  <input type="text" placeholder="CVV" id="cardCVV" />
+  <button onclick="addCard()">Ajouter la carte</button>
+</div>
+
+<!-- Liste des cartes ajoutées -->
+<div class="cards-list">
+  <h3>Cartes ajoutées</h3>
+  <div id="cardListContainer">
+    <!-- Les cartes ajoutées apparaîtront ici -->
+  </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <div class="card-inner">
+      <div class="front">
+        <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
+        <div class="row">
+          <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px" />
+          <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" />
+        </div>
+        <div class="row card-no">
+          <p>XXXX</p>
+          <p>XXXX</p>
+          <p>XXXX</p>
+          <p>XXXX</p>
+        </div>
+        <div class="row card-holder">
+          <p>NOM TITULAIRE</p>
+          <p>EXPIRE FIN</p>
+        </div>
+        <div class="row name">
+          <p>XXXXXX XXXXXXXXXXXXXX</p>
+          <p>XX / XX</p>
+        </div>
+      </div>
+      <div class="back">
+        <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
+        <div class="bar"></div>
+        <div class="row card-cvv">
+          <div>
+            <img src="https://i.ibb.co/S6JG8px/pattern.png" />
+          </div>
+          <p>XXX</p>
+        </div>
+        <div class="row card-text">
+          <p>CARTE VIRTUEL</p>
+        </div>
+        <div class="row signature">
+          <p>SIGNATURE</p>
+          <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+<br />
+<br />

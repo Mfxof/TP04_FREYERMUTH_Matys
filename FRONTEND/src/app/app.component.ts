@@ -6,6 +6,7 @@ import { FooterComponent } from './components/side/footer/footer.component';
 import { CarouselComponent } from './components/side/carousel/carousel.component';
 import { IndexBodyComponent } from './components/body/index/index-body/index-body.component';
 import { ProductListComponent } from './components/body/shop/product-list/product-list.component';
+import { CardsManagerComponent } from './components/body/cards/cards-manager/cards-manager.component';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,7 @@ import { ProductListComponent } from './components/body/shop/product-list/produc
     CarouselComponent,
     IndexBodyComponent,
     ProductListComponent,
+    CardsManagerComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
