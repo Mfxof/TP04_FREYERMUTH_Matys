@@ -1,20 +1,114 @@
+<!-- cards-manager.component.html -->
 <div class="add-card-form">
   <h3>Ajouter une nouvelle carte</h3>
-  <input type="text" placeholder="Nom du titulaire" id="cardHolderName" />
-  <input type="text" placeholder="Numéro de la carte" id="cardNumber" />
-  <input type="text" placeholder="Date d'expiration (MM/AA)" id="expiryDate" />
-  <input type="text" placeholder="CVV" id="cardCVV" />
-  <button onclick="addCard()">Ajouter la carte</button>
+  <form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+    <!-- Nom du titulaire -->
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="cardHolderName"
+        placeholder="Nom du titulaire"
+      />
+      <div
+        *ngIf="
+          cardForm.get('cardHolderName')?.errors &&
+          cardForm.get('cardHolderName')?.touched
+        "
+        class="error-message"
+      >
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['required']"
+          >Le nom est requis</span
+        >
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['pattern']"
+          >Le nom ne doit contenir que des lettres</span
+        >
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['minlength']"
+          >Le nom doit contenir au moins 2 caractères</span
+        >
+      </div>
+    </div>
+
+    <!-- Numéro de carte -->
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="cardNumber"
+        placeholder="Numéro de la carte"
+        (input)="formatCardNumber($event)"
+        maxlength="19"
+      />
+      <div
+        *ngIf="
+          cardForm.get('cardNumber')?.errors &&
+          cardForm.get('cardNumber')?.touched
+        "
+        class="error-message"
+      >
+        <span *ngIf="cardForm.get('cardNumber')?.errors?.['required']"
+          >Le numéro de carte est requis</span
+        >
+        <span *ngIf="cardForm.get('cardNumber')?.errors?.['pattern']"
+          >Format de numéro de carte invalide</span
+        >
+      </div>
+    </div>
+
+    <!-- Date d'expiration -->
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="expiryDate"
+        placeholder="Date d'expiration (MM/AA)"
+        (input)="formatExpiryDate($event)"
+        maxlength="5"
+      />
+      <div
+        *ngIf="
+          cardForm.get('expiryDate')?.errors &&
+          cardForm.get('expiryDate')?.touched
+        "
+        class="error-message"
+      >
+        <span *ngIf="cardForm.get('expiryDate')?.errors?.['required']"
+          >La date d'expiration est requise</span
+        >
+        <span *ngIf="cardForm.get('expiryDate')?.errors?.['pattern']"
+          >Format de date invalide (MM/AA)</span
+        >
+        <span *ngIf="cardForm.get('expiryDate')?.errors?.['expiredCard']"
+          >La carte est expirée</span
+        >
+      </div>
+    </div>
+
+    <!-- CVV -->
+    <div class="form-group">
+      <input
+        type="text"
+        formControlName="cardCVV"
+        placeholder="CVV"
+        maxlength="3"
+      />
+      <div
+        *ngIf="
+          cardForm.get('cardCVV')?.errors && cardForm.get('cardCVV')?.touched
+        "
+        class="error-message"
+      >
+        <span *ngIf="cardForm.get('cardCVV')?.errors?.['required']"
+          >Le CVV est requis</span
+        >
+        <span *ngIf="cardForm.get('cardCVV')?.errors?.['pattern']"
+          >Le CVV doit contenir 3 chiffres</span
+        >
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="!cardForm.valid">Ajouter la carte</button>
+  </form>
 </div>
 
-<!-- Liste des cartes ajoutées -->
-<div class="cards-list">
-  <h3>Cartes ajoutées</h3>
-  <div id="cardListContainer">
-    <!-- Les cartes ajoutées apparaîtront ici -->
-  </div>
-</div>
-
+<!-- Section pour afficher la carte -->
 <div class="container">
   <div class="card">
     <div class="card-inner">
@@ -25,18 +119,19 @@
           <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" />
         </div>
         <div class="row card-no">
-          <p>XXXX</p>
-          <p>XXXX</p>
-          <p>XXXX</p>
-          <p>XXXX</p>
+          <p>{{ maskedCardNumber || "XXXX XXXX XXXX XXXX" }}</p>
         </div>
         <div class="row card-holder">
           <p>NOM TITULAIRE</p>
           <p>EXPIRE FIN</p>
         </div>
         <div class="row name">
-          <p>XXXXXX XXXXXXXXXXXXXX</p>
-          <p>XX / XX</p>
+          <p>
+            {{
+              cardForm.get("cardHolderName")?.value || "XXXXXX XXXXXXXXXXXXXX"
+            }}
+          </p>
+          <p>{{ cardForm.get("expiryDate")?.value || "XX/XX" }}</p>
         </div>
       </div>
       <div class="back">
@@ -46,7 +141,7 @@
           <div>
             <img src="https://i.ibb.co/S6JG8px/pattern.png" />
           </div>
-          <p>XXX</p>
+          <p>{{ cardForm.get("cardCVV")?.value || "XXX" }}</p>
         </div>
         <div class="row card-text">
           <p>CARTE VIRTUEL</p>
@@ -59,7 +154,3 @@
     </div>
   </div>
 </div>
-
-<br />
-<br />
-<br />
