@@ -6,7 +6,8 @@ import { FooterComponent } from './components/side/footer/footer.component';
 import { CarouselComponent } from './components/side/carousel/carousel.component';
 import { IndexBodyComponent } from './components/body/index/index-body/index-body.component';
 import { ProductListComponent } from './components/body/shop/product-list/product-list.component';
-import { CardsManagerComponent } from './components/body/cards/cards-manager/cards-manager.component';
+import { CardsListComponent } from './components/body/cards/cards-list/cards-list.component';
+import { CardsformComponent } from './components/body/cards/cards-form/cards-form.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ import { CardsManagerComponent } from './components/body/cards/cards-manager/car
     CarouselComponent,
     IndexBodyComponent,
     ProductListComponent,
-    CardsManagerComponent,
+    CardsListComponent,
+    CardsformComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

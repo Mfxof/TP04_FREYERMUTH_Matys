@@ -10,13 +10,13 @@ import {
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-cards-manager',
+  selector: 'app-cards-form',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './cards-manager.component.html',
-  styleUrls: ['./cards-manager.component.css'],
+  templateUrl: './cards-form.component.html',
+  styleUrls: ['./cards-form.component.css'],
 })
-export class CardsManagerComponent implements OnInit {
+export class CardsformComponent implements OnInit {
   cardForm: FormGroup;
   maskedCardNumber: string = '';
 
