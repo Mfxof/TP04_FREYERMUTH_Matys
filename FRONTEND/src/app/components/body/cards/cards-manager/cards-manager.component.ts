@@ -4,6 +4,8 @@ import {
   FormGroup,
   Validators,
   ReactiveFormsModule,
+  AbstractControl,
+  ValidationErrors,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
@@ -30,7 +32,11 @@ export class CardsManagerComponent implements OnInit {
       ],
       cardNumber: [
         '',
-        [Validators.required, Validators.pattern(/^[0-9]{4}(\s[0-9]{4}){3}$/)],
+        [
+          Validators.required,
+          this.cardNumberValidator(),
+          Validators.pattern(/^[0-9]{4}(\s[0-9]{4}){3}$/),
+        ],
       ],
       expiryDate: [
         '',
@@ -47,8 +53,6 @@ export class CardsManagerComponent implements OnInit {
       this.updateMaskedCardNumber(value);
     });
   }
-
-  ngOnInit(): void {}
 
   private updateMaskedCardNumber(value: string) {
     if (!value) {
@@ -68,6 +72,77 @@ export class CardsManagerComponent implements OnInit {
     }
   }
 
+  ngOnInit(): void {}
+
+  private cardNumberValidator() {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value;
+
+      if (!value) {
+        return null;
+      }
+
+      const cardNumber = value.replace(/\s/g, '');
+
+      if (cardNumber.length !== 16) {
+        return { invalidLength: true };
+      }
+
+      let sum = 0;
+      let isEven = false;
+
+      for (let i = cardNumber.length - 1; i >= 0; i--) {
+        let digit = parseInt(cardNumber.charAt(i), 10);
+
+        if (isEven) {
+          digit *= 2;
+          if (digit > 9) {
+            digit -= 9;
+          }
+        }
+
+        sum += digit;
+        isEven = !isEven;
+      }
+
+      if (sum % 10 !== 0) {
+        return { invalidChecksum: true };
+      }
+
+      const cardPatterns = {
+        visa: /^4/,
+        mastercard: /^5[1-5]/,
+        amex: /^3[47]/,
+        discover: /^6(?:011|5)/,
+      };
+
+      if (
+        !Object.values(cardPatterns).some((pattern) => pattern.test(cardNumber))
+      ) {
+        return { invalidPrefix: true };
+      }
+
+      return null;
+    };
+  }
+
+  private expiryDateValidator() {
+    return (control: AbstractControl): ValidationErrors | null => {
+      if (!control.value) {
+        return null;
+      }
+
+      const [month, year] = control.value.split('/');
+      const expiry = new Date(2000 + parseInt(year), parseInt(month) - 1);
+      const today = new Date();
+
+      if (expiry < today) {
+        return { expiredCard: true };
+      }
+      return null;
+    };
+  }
+
   formatCardNumber(event: any): void {
     let value = event.target.value.replace(/\s/g, '');
     if (value.length > 0) {
@@ -84,24 +159,7 @@ export class CardsManagerComponent implements OnInit {
     event.target.value = value;
   }
 
-  private expiryDateValidator() {
-    return (control: any) => {
-      if (!control.value) {
-        return null;
-      }
-
-      const [month, year] = control.value.split('/');
-      const expiry = new Date(2000 + parseInt(year), parseInt(month) - 1);
-      const today = new Date();
-
-      if (expiry < today) {
-        return { expiredCard: true };
-      }
-      return null;
-    };
-  }
-
-  onSubmit() {
+  onSubmit(): void {
     if (this.cardForm.valid) {
       console.log('Carte ajoutée:', this.cardForm.value);
       this.cardForm.reset();

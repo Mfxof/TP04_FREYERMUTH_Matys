@@ -154,3 +154,102 @@
     </div>
   </div>
 </div>
+
+<!-- Pour le nom du titulaire -->
+<div
+  *ngIf="
+    cardForm.get('cardHolderName')?.errors &&
+    cardForm.get('cardHolderName')?.touched
+  "
+  class="error-message"
+>
+  <span *ngIf="cardForm.get('cardHolderName')?.errors?.['required']"
+    >Le nom est requis</span
+  >
+  <span *ngIf="cardForm.get('cardHolderName')?.errors?.['invalidCharacters']"
+    >Le nom ne doit contenir que des lettres, espaces, tirets et
+    apostrophes</span
+  >
+  <span *ngIf="cardForm.get('cardHolderName')?.errors?.['tooShort']"
+    >Le nom est trop court</span
+  >
+  <span *ngIf="cardForm.get('cardHolderName')?.errors?.['tooLong']"
+    >Le nom est trop long</span
+  >
+  <span *ngIf="cardForm.get('cardHolderName')?.errors?.['incompleteName']"
+    >Veuillez entrer le prénom et le nom</span
+  >
+  <span *ngIf="cardForm.get('cardHolderName')?.errors?.['partTooShort']"
+    >Chaque partie du nom doit contenir au moins 2 caractères</span
+  >
+</div>
+
+<!-- Pour le numéro de carte -->
+<div
+  *ngIf="
+    cardForm.get('cardNumber')?.errors && cardForm.get('cardNumber')?.touched
+  "
+  class="error-message"
+>
+  <span *ngIf="cardForm.get('cardNumber')?.errors?.['required']"
+    >Le numéro de carte est requis</span
+  >
+  <span *ngIf="cardForm.get('cardNumber')?.errors?.['invalidCharacters']"
+    >Le numéro ne doit contenir que des chiffres</span
+  >
+  <span *ngIf="cardForm.get('cardNumber')?.errors?.['invalidLength']"
+    >Le numéro doit contenir 16 chiffres</span
+  >
+  <span *ngIf="cardForm.get('cardNumber')?.errors?.['invalidChecksum']"
+    >Numéro de carte invalide</span
+  >
+  <span *ngIf="cardForm.get('cardNumber')?.errors?.['invalidCardType']"
+    >Type de carte non supporté</span
+  >
+</div>
+
+<!-- Pour la date d'expiration -->
+<div
+  *ngIf="
+    cardForm.get('expiryDate')?.errors && cardForm.get('expiryDate')?.touched
+  "
+  class="error-message"
+>
+  <span *ngIf="cardForm.get('expiryDate')?.errors?.['required']"
+    >La date d'expiration est requise</span
+  >
+  <span *ngIf="cardForm.get('expiryDate')?.errors?.['invalidFormat']"
+    >Format invalide (MM/YY)</span
+  >
+  <span *ngIf="cardForm.get('expiryDate')?.errors?.['invalidMonth']"
+    >Mois invalide</span
+  >
+  <span *ngIf="cardForm.get('expiryDate')?.errors?.['expired']"
+    >Carte expirée</span
+  >
+  <span *ngIf="cardForm.get('expiryDate')?.errors?.['tooFarInFuture']"
+    >Date d'expiration trop éloignée</span
+  >
+</div>
+
+<!-- Pour le CVV -->
+<div
+  *ngIf="cardForm.get('cardCVV')?.errors && cardForm.get('cardCVV')?.touched"
+  class="error-message"
+>
+  <span *ngIf="cardForm.get('cardCVV')?.errors?.['required']"
+    >Le CVV est requis</span
+  >
+  <span *ngIf="cardForm.get('cardCVV')?.errors?.['invalidCharacters']"
+    >Le CVV ne doit contenir que des chiffres</span
+  >
+  <span *ngIf="cardForm.get('cardCVV')?.errors?.['invalidLength']"
+    >Longueur du CVV invalide</span
+  >
+  <span *ngIf="cardForm.get('cardCVV')?.errors?.['invalidLengthForAmex']"
+    >Le CVV doit contenir 4 chiffres pour une carte Amex</span
+  >
+  <span *ngIf="cardForm.get('cardCVV')?.errors?.['invalidLengthForNonAmex']"
+    >Le CVV doit contenir 3 chiffres</span
+  >
+</div>
