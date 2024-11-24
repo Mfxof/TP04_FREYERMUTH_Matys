@@ -18,33 +18,38 @@
         "
         class="error-message"
       >
-        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['required']"
-          >Le nom est requis</span
-        >
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['required']">
+          Le nom est requis
+        </span>
         <span
           *ngIf="cardForm.get('cardHolderName')?.errors?.['invalidCharacters']"
-          >Le nom ne doit contenir que des lettres, espaces, tirets et
-          apostrophes</span
         >
-        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['tooShort']"
-          >Le nom est trop court</span
+          Le nom ne doit contenir que des lettres, espaces, tirets et
+          apostrophes
+        </span>
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['tooShort']">
+          Le nom est trop court
+        </span>
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['tooLong']">
+          Le nom est trop long
+        </span>
+        <span
+          *ngIf="cardForm.get('cardHolderName')?.errors?.['incompleteName']"
         >
-        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['tooLong']"
-          >Le nom est trop long</span
-        >
-        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['incompleteName']"
-          >Veuillez entrer le prénom et le nom</span
-        >
-        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['partTooShort']"
-          >Chaque partie du nom doit contenir au moins 2 caractères</span
-        >
-        <!-- TEMP -->
-        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['pattern']"
-          >Le nom ne doit contenir que des lettres</span
-        >
-        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['minlength']"
-          >Le nom doit contenir au moins 2 caractères</span
-        >
+          Veuillez entrer le prénom et le nom
+        </span>
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['partTooShort']">
+          Chaque partie du nom doit contenir au moins 2 caractères
+        </span>
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['pattern']">
+          Le nom ne doit contenir que des lettres
+        </span>
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['minlength']">
+          Le nom doit contenir au moins 2 caractères
+        </span>
+        <span *ngIf="cardForm.get('cardHolderName')?.errors?.['twoWords']">
+          Vous devez mettre le prenom et le nom
+        </span>
       </div>
     </div>
 
@@ -120,7 +125,6 @@
         <span *ngIf="cardForm.get('expiryDate')?.errors?.['tooFarInFuture']"
           >Date d'expiration trop éloignée</span
         >
-        <!-- TEMP -->
         <span *ngIf="cardForm.get('expiryDate')?.errors?.['pattern']"
           >Format de date invalide (MM/AA)</span
         >
@@ -160,7 +164,6 @@
         <span *ngIf="cardForm.get('cardCVV')?.errors?.['pattern']"
           >Le CVV doit contenir 3 chiffres</span
         >
-        <!-- TEMP -->
       </div>
     </div>
 

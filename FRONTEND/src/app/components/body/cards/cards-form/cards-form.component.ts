@@ -30,8 +30,10 @@ export class CardsformComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.minLength(2),
-            Validators.pattern(/^[a-zA-ZÀ-ÿ\s'-]+$/),
+            Validators.pattern("[a-zA-Z\\-\\s']*"),
+            this.twoWordsValidator(),
+            Validators.minLength(3),
+            Validators.maxLength(30),
           ],
         ],
         cardNumber: [
@@ -41,6 +43,8 @@ export class CardsformComponent implements OnInit {
             this.cardNumberValidator(),
             Validators.pattern(/^[0-9]{4}(\s[0-9]{4}){3}$/),
             this.cardPrefixValidator(),
+            Validators.minLength(19), // ou 16 - Je doit aussi compter les espaces vsd
+            Validators.maxLength(19),
           ],
         ],
         expiryDate: [
@@ -58,6 +62,21 @@ export class CardsformComponent implements OnInit {
         this.updateMaskedCardNumber(value);
       });
     }
+  }
+
+  private twoWordsValidator() {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value;
+      if (value) {
+        const words = value
+          .split(' ')
+          .filter((word: string) => word.length > 0);
+        if (words.length !== 2) {
+          return { twoWords: 'Il faut 2  mots !' };
+        }
+      }
+      return null;
+    };
   }
 
   private updateMaskedCardNumber(value: string) {
