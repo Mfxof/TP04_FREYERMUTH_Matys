@@ -1,17 +1,18 @@
 import { Component, OnInit, OnDestroy, computed, effect } from '@angular/core';
 import { CardsService } from '../../../../services/cards.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cards-list',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cards-list.component.html',
   styleUrl: './cards-list.component.css',
 })
 export class CardsListComponent implements OnInit, OnDestroy {
-  cartes = computed(() => this.carteService.getCartes()());
+  cards = computed(() => this.cardService.getCartes()());
 
-  constructor(private carteService: CardsService) {
+  constructor(private cardService: CardsService) {
     effect(() => {});
   }
 
@@ -20,6 +21,6 @@ export class CardsListComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {}
 
   delCarte(indexCarte: number): void {
-    this.carteService.delCarte(indexCarte);
+    this.cardService.delCarte(indexCarte);
   }
 }

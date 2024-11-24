@@ -2,271 +2,50 @@
 <div class="main-container">
   <h2>Liste de vos cartes :</h2>
   <div class="cards-container">
-    <!-- Section pour afficher la carte -->
-    <div class="container">
-      <div class="card">
-        <div class="card-inner">
-          <div class="front">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="row">
-              <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px" />
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" />
-            </div>
-            <div class="row card-no">
-              <p>{{ "XXXX XXXX XXXX XXXX" }}</p>
-            </div>
-            <div class="row card-holder">
-              <p>NOM TITULAIRE</p>
-              <p>EXPIRE FIN</p>
-            </div>
-            <div class="row name">
-              <p>{{ "XXXXXX XXXXXXXXXXXXXX" }}</p>
-              <p>{{ "XX/XX" }}</p>
-            </div>
-          </div>
-          <div class="back">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="bar"></div>
-            <div class="row card-cvv">
-              <div>
-                <img src="https://i.ibb.co/S6JG8px/pattern.png" />
+    <div *ngFor="let card of cards(); let i = index">
+      <!-- Section pour afficher la carte -->
+      <div class="container">
+        <div class="card">
+          <div class="card-inner">
+            <div class="front">
+              <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
+              <div class="row">
+                <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px" />
+                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" />
               </div>
-              <p>{{ "XXX" }}</p>
-            </div>
-            <div class="row card-text">
-              <p>CARTE VIRTUEL</p>
-            </div>
-            <div class="row signature">
-              <p>SIGNATURE</p>
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px" />
-            </div>
-            <!-- Bouton de suppression -->
-            <button class="delete-button">Supprimer</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section pour afficher la carte -->
-    <div class="container">
-      <div class="card">
-        <div class="card-inner">
-          <div class="front">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="row">
-              <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px" />
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" />
-            </div>
-            <div class="row card-no">
-              <p>{{ "XXXX XXXX XXXX XXXX" }}</p>
-            </div>
-            <div class="row card-holder">
-              <p>NOM TITULAIRE</p>
-              <p>EXPIRE FIN</p>
-            </div>
-            <div class="row name">
-              <p>{{ "XXXXXX XXXXXXXXXXXXXX" }}</p>
-              <p>{{ "XX/XX" }}</p>
-            </div>
-          </div>
-          <div class="back">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="bar"></div>
-            <div class="row card-cvv">
-              <div>
-                <img src="https://i.ibb.co/S6JG8px/pattern.png" />
+              <div class="row card-no">
+                <p>{{ card.code || "XXXX XXXX XXXX XXXX" }}</p>
               </div>
-              <p>{{ "XXX" }}</p>
-            </div>
-            <div class="row card-text">
-              <p>CARTE VIRTUEL</p>
-            </div>
-            <div class="row signature">
-              <p>SIGNATURE</p>
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px" />
-            </div>
-            <!-- Bouton de suppression -->
-            <button class="delete-button">Supprimer</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section pour afficher la carte -->
-    <div class="container">
-      <div class="card">
-        <div class="card-inner">
-          <div class="front">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="row">
-              <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px" />
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" />
-            </div>
-            <div class="row card-no">
-              <p>{{ "XXXX XXXX XXXX XXXX" }}</p>
-            </div>
-            <div class="row card-holder">
-              <p>NOM TITULAIRE</p>
-              <p>EXPIRE FIN</p>
-            </div>
-            <div class="row name">
-              <p>{{ "XXXXXX XXXXXXXXXXXXXX" }}</p>
-              <p>{{ "XX/XX" }}</p>
-            </div>
-          </div>
-          <div class="back">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="bar"></div>
-            <div class="row card-cvv">
-              <div>
-                <img src="https://i.ibb.co/S6JG8px/pattern.png" />
+              <div class="row card-holder">
+                <p>NOM TITULAIRE</p>
+                <p>EXPIRE FIN</p>
               </div>
-              <p>{{ "XXX" }}</p>
-            </div>
-            <div class="row card-text">
-              <p>CARTE VIRTUEL</p>
-            </div>
-            <div class="row signature">
-              <p>SIGNATURE</p>
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px" />
-            </div>
-            <!-- Bouton de suppression -->
-            <button class="delete-button">Supprimer</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section pour afficher la carte -->
-    <div class="container">
-      <div class="card">
-        <div class="card-inner">
-          <div class="front">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="row">
-              <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px" />
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" />
-            </div>
-            <div class="row card-no">
-              <p>{{ "XXXX XXXX XXXX XXXX" }}</p>
-            </div>
-            <div class="row card-holder">
-              <p>NOM TITULAIRE</p>
-              <p>EXPIRE FIN</p>
-            </div>
-            <div class="row name">
-              <p>{{ "XXXXXX XXXXXXXXXXXXXX" }}</p>
-              <p>{{ "XX/XX" }}</p>
-            </div>
-          </div>
-          <div class="back">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="bar"></div>
-            <div class="row card-cvv">
-              <div>
-                <img src="https://i.ibb.co/S6JG8px/pattern.png" />
+              <div class="row name">
+                <p>{{ card.name || "XXXXXX XXXXXXXXXXXXXX" }}</p>
+                <p>{{ card.month + "/" + card.years || "XX/XX" }}</p>
               </div>
-              <p>{{ "XXX" }}</p>
             </div>
-            <div class="row card-text">
-              <p>CARTE VIRTUEL</p>
-            </div>
-            <div class="row signature">
-              <p>SIGNATURE</p>
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px" />
-            </div>
-            <!-- Bouton de suppression -->
-            <button class="delete-button">Supprimer</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section pour afficher la carte -->
-    <div class="container">
-      <div class="card">
-        <div class="card-inner">
-          <div class="front">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="row">
-              <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px" />
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" />
-            </div>
-            <div class="row card-no">
-              <p>{{ "XXXX XXXX XXXX XXXX" }}</p>
-            </div>
-            <div class="row card-holder">
-              <p>NOM TITULAIRE</p>
-              <p>EXPIRE FIN</p>
-            </div>
-            <div class="row name">
-              <p>{{ "XXXXXX XXXXXXXXXXXXXX" }}</p>
-              <p>{{ "XX/XX" }}</p>
-            </div>
-          </div>
-          <div class="back">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="bar"></div>
-            <div class="row card-cvv">
-              <div>
-                <img src="https://i.ibb.co/S6JG8px/pattern.png" />
+            <div class="back">
+              <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
+              <div class="bar"></div>
+              <div class="row card-cvv">
+                <div>
+                  <img src="https://i.ibb.co/S6JG8px/pattern.png" />
+                </div>
+                <p>{{ card.ccv || "XXX" }}</p>
               </div>
-              <p>{{ "XXX" }}</p>
-            </div>
-            <div class="row card-text">
-              <p>CARTE VIRTUEL</p>
-            </div>
-            <div class="row signature">
-              <p>SIGNATURE</p>
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px" />
-            </div>
-            <!-- Bouton de suppression -->
-            <button class="delete-button">Supprimer</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section pour afficher la carte -->
-    <div class="container">
-      <div class="card">
-        <div class="card-inner">
-          <div class="front">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="row">
-              <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px" />
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px" />
-            </div>
-            <div class="row card-no">
-              <p>{{ "XXXX XXXX XXXX XXXX" }}</p>
-            </div>
-            <div class="row card-holder">
-              <p>NOM TITULAIRE</p>
-              <p>EXPIRE FIN</p>
-            </div>
-            <div class="row name">
-              <p>{{ "XXXXXX XXXXXXXXXXXXXX" }}</p>
-              <p>{{ "XX/XX" }}</p>
-            </div>
-          </div>
-          <div class="back">
-            <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img" />
-            <div class="bar"></div>
-            <div class="row card-cvv">
-              <div>
-                <img src="https://i.ibb.co/S6JG8px/pattern.png" />
+              <div class="row card-text">
+                <p>CARTE VIRTUEL</p>
               </div>
-              <p>{{ "XXX" }}</p>
+              <div class="row signature">
+                <p>SIGNATURE</p>
+                <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px" />
+              </div>
+              <!-- Bouton de suppression -->
+              <button (click)="delCarte(i)" class="delete-button">
+                Supprimer
+              </button>
             </div>
-            <div class="row card-text">
-              <p>CARTE VIRTUEL</p>
-            </div>
-            <div class="row signature">
-              <p>SIGNATURE</p>
-              <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px" />
-            </div>
-            <!-- Bouton de suppression -->
-            <button class="delete-button">Supprimer</button>
           </div>
         </div>
       </div>
