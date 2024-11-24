@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CardsService } from '../../../../services/cards.service';
+import { Card } from '../../../../services/card';
 import {
   FormBuilder,
   FormGroup,
@@ -20,38 +22,42 @@ export class CardsformComponent implements OnInit {
   cardForm: FormGroup;
   maskedCardNumber: string = '';
 
-  constructor(private fb: FormBuilder) {
-    this.cardForm = this.fb.group({
-      cardHolderName: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(2),
-          Validators.pattern(/^[a-zA-ZÀ-ÿ\s'-]+$/),
+  constructor(private fb: FormBuilder, private cardsService: CardsService) {
+    const anneeCourante = new Date().getFullYear() % 100;
+    {
+      this.cardForm = this.fb.group({
+        cardHolderName: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(2),
+            Validators.pattern(/^[a-zA-ZÀ-ÿ\s'-]+$/),
+          ],
         ],
-      ],
-      cardNumber: [
-        '',
-        [
-          Validators.required,
-          this.cardNumberValidator(),
-          Validators.pattern(/^[0-9]{4}(\s[0-9]{4}){3}$/),
+        cardNumber: [
+          '',
+          [
+            Validators.required,
+            this.cardNumberValidator(),
+            Validators.pattern(/^[0-9]{4}(\s[0-9]{4}){3}$/),
+            this.cardPrefixValidator(),
+          ],
         ],
-      ],
-      expiryDate: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^(0[1-9]|1[0-2])\/([0-9]{2})$/),
-          this.expiryDateValidator(),
+        expiryDate: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(/^(0[1-9]|1[0-2])\/([0-9]{2})$/),
+            this.expiryDateValidator(),
+          ],
         ],
-      ],
-      cardCVV: ['', [Validators.required, Validators.pattern(/^[0-9]{3}$/)]],
-    });
+        cardCVV: ['', [Validators.required, Validators.pattern(/^[0-9]{3}$/)]],
+      });
 
-    this.cardForm.get('cardNumber')?.valueChanges.subscribe((value) => {
-      this.updateMaskedCardNumber(value);
-    });
+      this.cardForm.get('cardNumber')?.valueChanges.subscribe((value) => {
+        this.updateMaskedCardNumber(value);
+      });
+    }
   }
 
   private updateMaskedCardNumber(value: string) {
@@ -126,6 +132,25 @@ export class CardsformComponent implements OnInit {
     };
   }
 
+  private cardPrefixValidator() {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const value = control.value;
+      if (!value) {
+        return null;
+      }
+
+      const cardNumber = value.replace(/\s/g, '');
+
+      const validPrefix = /^[45]/.test(cardNumber);
+
+      if (!validPrefix) {
+        return { invalidPrefix: true };
+      }
+
+      return null;
+    };
+  }
+
   private expiryDateValidator() {
     return (control: AbstractControl): ValidationErrors | null => {
       if (!control.value) {
@@ -160,8 +185,18 @@ export class CardsformComponent implements OnInit {
   }
 
   onSubmit(): void {
+    //console.log(this.cardForm.valid);
     if (this.cardForm.valid) {
-      console.log('Carte ajoutée:', this.cardForm.value);
+      const formValues = this.cardForm.value;
+      const nouvelleCarte: Card = {
+        name: formValues.cardHolderName,
+        code: formValues.cardNumber,
+        ccv: parseInt(formValues.cardCVV, 10),
+        month: parseInt(formValues.expiryDate.split('/')[0], 10),
+        years: parseInt(formValues.expiryDate.split('/')[1], 10),
+      };
+
+      this.cardsService.addCarte(nouvelleCarte);
       this.cardForm.reset();
       this.maskedCardNumber = '';
     } else {
