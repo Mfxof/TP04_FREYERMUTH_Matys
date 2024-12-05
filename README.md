@@ -1,32 +1,15 @@
-# Refonte toral du site
+# TP05
 
 ## Trello du TP :
 - https://trello.com/b/bxXCIlLX/tp05-web-si
 
 # A faire
-Service carte signal cartes pour avoir un tableau de cartes
 
-- Service carte
-- Meth addCarte
-- Get liste de carte
+- Mettre en place le systeme crud (authentification de la connexion, etc..)
+- Utiliser Ngxs
+- Rendre dynamque avec le Store
 
-- Composant de saisie :
-  - Utilisation de ReadFormModule
-        - Validator
-  - Directive : Formatage des erreurs
-  - Injecter un service
-- Composant affecté :
-  - Afficher la liste des cartes (recup le signal)
-  - Caviardé par un Pipe
-- Service Carte :
-  - GET Carte -Signal-
-  - ADD Carte -public-
-  - DEL Carte
-  - Signal des cartes
- 
-- (Faire 4 validatorn nom, digit, date, CCV)
+# Autre 
 
----
-
-CHangement de pages :
+Changement de pages :
 https://stackblitz.com/edit/stackblitz-starters-czkvzt?file=src%2Fc1%2Fc1.component.html
