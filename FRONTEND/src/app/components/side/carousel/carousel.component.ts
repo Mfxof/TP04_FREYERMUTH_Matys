@@ -1,10 +1,11 @@
 // app.component.ts ou ton composant
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { IndexBodyComponent } from '../../body/index/index-body/index-body.component';
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [],
+  imports: [IndexBodyComponent],
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
 })

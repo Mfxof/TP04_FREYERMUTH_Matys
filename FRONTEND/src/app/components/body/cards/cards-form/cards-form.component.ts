@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CardsService } from '../../../../services/cards.service';
 import { Card } from '../../../../services/card';
+import { CardsListComponent } from '../cards-list/cards-list.component';
 import {
   FormBuilder,
   FormGroup,
@@ -14,7 +15,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-cards-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, CardsListComponent],
   templateUrl: './cards-form.component.html',
   styleUrls: ['./cards-form.component.css'],
 })

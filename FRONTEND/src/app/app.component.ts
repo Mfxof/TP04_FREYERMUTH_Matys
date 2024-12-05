@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './components/side/header/header.component';
 import { FooterComponent } from './components/side/footer/footer.component';
@@ -13,6 +15,7 @@ import { CardsformComponent } from './components/body/cards/cards-form/cards-for
   selector: 'app-root',
   standalone: true,
   imports: [
+    RouterLink,
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
@@ -21,10 +24,14 @@ import { CardsformComponent } from './components/body/cards/cards-form/cards-for
     ProductListComponent,
     CardsListComponent,
     CardsformComponent,
+    CommonModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  constructor() {}
   title = 'TP04-FREYERMUTH-MATYS';
+
+  ngOnInit(): void {}
 }
