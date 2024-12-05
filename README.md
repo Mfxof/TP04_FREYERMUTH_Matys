@@ -1,7 +1,7 @@
 # Refonte toral du site
 
 ## Trello du TP :
-- https://trello.com/b/bxXCIlLX/tp04-web-si
+- https://trello.com/b/bxXCIlLX/tp05-web-si
 
 # A faire
 Service carte signal cartes pour avoir un tableau de cartes
@@ -28,15 +28,5 @@ Service carte signal cartes pour avoir un tableau de cartes
 
 ---
 
-Samedi 16 Novembre 16h le rendu
-2 composants 1 service 1 directive 1 pipe
-
-Composant 1 : ReactFormsModule pour créer la carte avec 4 validators 
-
-Sur bouton submit 2 choses : error validator avec directive ou si tout va bien on appelle le service
-
-Service : méthod publique addCarte(nouvelle carte saisie : Type)
-Envoi de la carte -> update de la variable privée du service listCards
-affCarte composant va injecter service pour récupérer la liste des cartes qui est un signal
-automatiquement afficher la liste des cartes avec nouvelle carte qui s'ajoute
-et on caviarde le PAN via un pipe
+CHangement de pages :
+https://stackblitz.com/edit/stackblitz-starters-czkvzt?file=src%2Fc1%2Fc1.component.html
