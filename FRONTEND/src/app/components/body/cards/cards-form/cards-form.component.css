@@ -225,3 +225,52 @@ html {
 .card:hover .card-inner {
   transform: rotateY(-180deg);
 }
+
+.purchase-form {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  margin: 26px;
+  width: 98%;
+  color: #fff;
+}
+
+.purchase-form h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.purchase-form label {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.purchase-form input,
+.purchase-form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.purchase-form button {
+  padding: 12px;
+  background: #ff3333;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.purchase-form button:hover {
+  background: #e60000;
+}

@@ -19,7 +19,7 @@ export class CartComponent implements OnInit, OnDestroy {
 
   constructor(private readonly catalogueService: CatalogueService) {}
 
-  id: String = '5';
+  id: String = '';
 
   ngOnInit(): void {
     this.subscription.add(

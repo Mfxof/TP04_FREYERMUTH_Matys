@@ -274,3 +274,29 @@ html {
 .delete-button:hover {
   background: #e60000;
 }
+.use-button {
+  padding: 12px 20px;
+  background: #28a745; /* Couleur verte */
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: -10px;
+}
+
+.use-button:hover {
+  background: #218838;
+}
+
+.use-button:active {
+  transform: scale(0.98);
+}
+
+.use-card {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

@@ -16,9 +16,8 @@
       <p>{{ produit.description }}</p>
       <hr />
       <p class="price">Prix : {{ produit.price }}€</p>
-      <a href="#" class="btn-buy">Ajouter au panier</a>
-      <p>Temp : {{ produit.id }}</p>
-      <a [routerLink]="['/cart', id]">TEST</a>
+      <a [routerLink]="['/cart', id]" class="btn-buy">Ajouter au panier</a>
+      <!-- <p>Temp : {{ produit.id }}</p> -->
     </div>
   </div>
 </div>

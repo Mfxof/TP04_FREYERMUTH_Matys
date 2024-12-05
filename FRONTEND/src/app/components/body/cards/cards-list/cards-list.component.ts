@@ -23,4 +23,8 @@ export class CardsListComponent implements OnInit, OnDestroy {
   delCarte(indexCarte: number): void {
     this.cardService.delCarte(indexCarte);
   }
+
+  useCard(indexCarte: number): void {
+    console.log('Carte utilisée !');
+  }
 }
