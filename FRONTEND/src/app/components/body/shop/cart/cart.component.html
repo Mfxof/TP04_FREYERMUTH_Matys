@@ -1,1 +1,17 @@
-<p>cart works!</p>
+<div class="nos-produit">
+  <h3>Vos articles</h3>
+  <p>Consultez vos articles !</p>
+
+  {{ id }}
+
+  <hr />
+  <div class="catalogue">
+    <div *ngFor="let produit of produits" class="produit">
+      <img [src]="produit.image" alt="{{ produit.name }}" />
+      <h2>{{ produit.name }}</h2>
+      <p>{{ produit.description }}</p>
+      <hr />
+      <p class="price">Prix : {{ produit.price }}€</p>
+    </div>
+  </div>
+</div>

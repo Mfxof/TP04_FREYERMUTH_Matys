@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-index-body',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterOutlet, RouterLink],
   templateUrl: './index-body.component.html',
-  styleUrl: './index-body.component.css'
+  styleUrl: './index-body.component.css',
 })
-export class IndexBodyComponent {
-
-}
+export class IndexBodyComponent {}
