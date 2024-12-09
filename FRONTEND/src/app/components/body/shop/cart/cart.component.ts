@@ -17,13 +17,13 @@ export class CartComponent implements OnInit, OnDestroy {
   cartProduits: CartProduct[] = [];
   private subscription: Subscription = new Subscription();
 
-  constructor(private readonly cardService: CartService) {}
+  constructor(private readonly cartService: CartService) {}
 
   id: String = '';
 
   ngOnInit(): void {
     this.subscription.add(
-      this.cardService.getCatalogue().subscribe((data: CartProduct[]) => {
+      this.cartService.getCatalogue().subscribe((data: CartProduct[]) => {
         console.log('Mes produits :', data);
         this.cartProduits = data;
       })
@@ -38,11 +38,23 @@ export class CartComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  onRemoveFromCart(cartProduct: CartProduct) {
+    this.cartService.removeProduit(cartProduct);
+  }
+
+  // *************** //
+  //       T1        //
+  // *************** //
+
   get getArticleTotal() {
-    return this.cardService.getArticleTotal;
+    return this.cartService.getArticleTotal;
   }
 
   get getPrixTotal() {
-    return this.cardService.getPrixTotal;
+    return this.cartService.getPrixTotal;
+  }
+
+  get getPanier() {
+    return this.cartService.getPanier;
   }
 }

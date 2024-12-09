@@ -43,10 +43,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  get getArticleTotal() {
-    return this.cartService.getArticleTotal;
-  }
-
   onAddToCart(product: Produit, quantity: string) {
     const cartProducts = new CartProduct();
     cartProducts.name = product.name;
@@ -57,5 +53,14 @@ export class ProductListComponent implements OnInit, OnDestroy {
     cartProducts.description = product.description;
 
     this.cartService.addProduit(cartProducts);
+  }
+
+  // *************** //
+  //       T1        //
+  // *************** //
+
+  get getArticleTotal() {
+    return this.cartService.getArticleTotal;
+    // Faire la qqt
   }
 }

@@ -11,15 +11,15 @@
 
   <h4 *ngIf="getArticleTotal == 0">Votre panier est vide</h4>
   <div class="catalogue">
-    <div *ngFor="let cartProduits of cartProduits" class="cartProduits">
+    <div *ngFor="let cartProduits of getPanier()" class="cartProduits">
       <img [src]="cartProduits.image" alt="{{ cartProduits.name }}" />
       <h2>{{ cartProduits.name }}</h2>
       <p>{{ cartProduits.description }}</p>
       <hr />
       <p class="price">Prix : {{ cartProduits.price }}€</p>
-      <p>Quantité : {{ cartProduits.quantity }}</p>
+      <!-- <p>Quantité : {{ cartProduits.quantity }}</p> -->
       <div class="input-wrapper">
-        <label for="positive-number" class="input-label">Quantité : </label>
+        <p for="positive-number" class="input-label">Quantité :</p>
         <input
           type="number"
           id="positive-number"
@@ -30,8 +30,15 @@
           value="{{ cartProduits.quantity }}"
         />
       </div>
-      <!-- <p>{{ (cartProduits.quantity * cartProduits.price).toFixed(2) }} "€"</p> -->
-      <!-- <button (click)="onRemoveFromCart(item)">Remove</button> -->
+      <p>
+        Prix total :
+        {{ (cartProduits.quantity * cartProduits.price).toFixed(2) }}€
+      </p>
+      <button class="btn-buy">Mettre à jour</button>
+
+      <button class="btn-buy" (click)="onRemoveFromCart(cartProduits)">
+        Supprimer
+      </button>
     </div>
   </div>
 </div>

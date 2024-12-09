@@ -18,19 +18,15 @@ export class CartService {
       .pipe(map((response) => response.cartProduct));
   }
 
-  get getPrixTotal() {
-    let total = 0;
+  removeProduit(cart: CartProduct) {
     let panier = this.panier();
     for (let i = 0; i < panier.length; i++) {
-      total += panier[i].price * panier[i].quantity;
+      if (panier[i].name === cart.name) {
+        panier.splice(i, 1);
+        this.panier.set(panier);
+        break;
+      }
     }
-    return total;
-  }
-
-  get getArticleTotal() {
-    let panier = this.panier();
-    let total = panier.length;
-    return total;
   }
 
   addProduit(cartProduct: CartProduct) {
@@ -53,5 +49,29 @@ export class CartService {
 
     //log all the products in the cart
     console.log(this.panier());
+    // TO EDITED
+  }
+
+  // *************** //
+  //       T1        //
+  // *************** //
+
+  get getPrixTotal() {
+    let total = 0;
+    let panier = this.panier();
+    for (let i = 0; i < panier.length; i++) {
+      total += panier[i].price * panier[i].quantity;
+    }
+    return parseFloat(total.toFixed(2));
+  }
+
+  get getArticleTotal() {
+    let panier = this.panier();
+    let total = panier.length;
+    return total;
+  }
+
+  get getPanier() {
+    return this.panier;
   }
 }
