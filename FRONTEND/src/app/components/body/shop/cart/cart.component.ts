@@ -1,10 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CatalogueService } from '../../../../services/catalogue.service';
-import { Produit } from '../../../../models/produit.model';
+import { CartProduct } from '../../../../models/cartProduct.model';
 import { CommonModule } from '@angular/common';
 import { ProductFilterComponent } from '../product-filter/product-filter.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { CartService } from '../../../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -14,27 +14,35 @@ import { RouterOutlet, RouterLink } from '@angular/router';
   styleUrl: './cart.component.css',
 })
 export class CartComponent implements OnInit, OnDestroy {
-  produits: Produit[] = [];
+  cartProduits: CartProduct[] = [];
   private subscription: Subscription = new Subscription();
 
-  constructor(private readonly catalogueService: CatalogueService) {}
+  constructor(private readonly cardService: CartService) {}
 
   id: String = '';
 
   ngOnInit(): void {
     this.subscription.add(
-      this.catalogueService.getCatalogue().subscribe((data: Produit[]) => {
+      this.cardService.getCatalogue().subscribe((data: CartProduct[]) => {
         console.log('Mes produits :', data);
-        this.produits = data;
+        this.cartProduits = data;
       })
     );
   }
 
-  onSearchResults(filteredProducts: Produit[]): void {
-    this.produits = filteredProducts;
+  onSearchResults(filteredProducts: CartProduct[]): void {
+    this.cartProduits = filteredProducts;
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  get getArticleTotal() {
+    return this.cardService.getArticleTotal;
+  }
+
+  get getPrixTotal() {
+    return this.cardService.getPrixTotal;
   }
 }

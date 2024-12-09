@@ -1,69 +1,24 @@
 import { Injectable, signal } from '@angular/core';
 import { CartProduct } from '../models/cartProduct.model';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
+  constructor(private readonly http: HttpClient) {}
   private panier = signal<CartProduct[]>([]);
 
-  constructor() {}
-
-  addProduit(produit: CartProduct) {
-    let panier = this.panier();
-    let found = false;
-
-    for (let i = 0; i < panier.length; i++) {
-      if (panier[i].id === produit.id) {
-        panier[i].quantity += produit.quantity;
-        found = true;
-        break;
-      }
-    }
-
-    if (!found) {
-      panier.push(produit);
-    }
-
-    this.panier.set(panier);
-
-    //log all the products in the cart
-    console.log(this.panier());
+  getCatalogue(): Observable<CartProduct[]> {
+    return this.http
+      .get<{ cartProduct: CartProduct[] }>(environment.baseUrl)
+      .pipe(map((response) => response.cartProduct));
   }
 
-  setProduitQtt(produit: CartProduct) {
-    let panier = this.panier();
-    if (produit.quantity <= 0) {
-      this.removeProduit(produit);
-      return;
-    }
-
-    for (let i = 0; i < panier.length; i++) {
-      if (panier[i].id === produit.id) {
-        panier[i].quantity = produit.quantity;
-        break;
-      }
-    }
-
-    this.panier.set(panier);
-  }
-
-  removeProduit(card: CartProduct) {
-    let panier = this.panier();
-    for (let i = 0; i < panier.length; i++) {
-      if (panier[i].id === card.id) {
-        panier.splice(i, 1);
-        this.panier.set(panier);
-        break;
-      }
-    }
-  }
-
-  get getPanier() {
-    return this.panier;
-  }
-
-  get getTotal() {
+  get getPrixTotal() {
     let total = 0;
     let panier = this.panier();
     for (let i = 0; i < panier.length; i++) {
@@ -72,12 +27,9 @@ export class CartService {
     return total;
   }
 
-  get getNbProduits() {
-    let nb = 0;
+  get getArticleTotal() {
     let panier = this.panier();
-    for (let i = 0; i < panier.length; i++) {
-      nb += panier[i].quantity;
-    }
-    return nb;
+    let total = panier.length;
+    return total;
   }
 }

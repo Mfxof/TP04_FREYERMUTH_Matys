@@ -2,17 +2,32 @@
   <h3>Vos articles</h3>
   <p>Consultez vos articles !</p>
 
-  <p>(TEMP) Id : {{ id }}</p>
-  <a class="nav-link btn-payment" routerLink="/paiement">Vers le paiement</a>
-
   <hr />
+  <p>Prix total : {{ getPrixTotal }}</p>
+  <p>Nombre d'articles : {{ getArticleTotal }}</p>
+  <a class="nav-link btn-payment" routerLink="/paiement">Vers le paiement</a>
+  <hr />
+
   <div class="catalogue">
-    <div *ngFor="let produit of produits" class="produit">
-      <img [src]="produit.image" alt="{{ produit.name }}" />
-      <h2>{{ produit.name }}</h2>
-      <p>{{ produit.description }}</p>
+    <div *ngFor="let cartProduits of cartProduits" class="cartProduits">
+      <img [src]="cartProduits.image" alt="{{ cartProduits.name }}" />
+      <h2>{{ cartProduits.name }}</h2>
+      <p>{{ cartProduits.description }}</p>
       <hr />
-      <p class="price">Prix : {{ produit.price }}€</p>
+      <p class="price">Prix : {{ cartProduits.price }}€</p>
+      <p>Quantité : {{ cartProduits.quantity }}</p>
+      <div class="input-wrapper">
+        <label for="positive-number" class="input-label">Quantité : </label>
+        <input
+          type="number"
+          id="positive-number"
+          class="positive-number"
+          min="0"
+          step="1"
+          placeholder="1"
+          value="{{ cartProduits.quantity }}"
+        />
+      </div>
     </div>
   </div>
 </div>
