@@ -8,7 +8,7 @@ export const routes: Routes = [
   { path: 'boutique', component: ProductListComponent },
   { path: 'index', component: ProductListComponent },
   { path: 'paiement', component: CardsformComponent },
-  { path: 'cart/:id', component: CartComponent },
+  { path: 'cart', component: CartComponent },
   {
     path: '**',
     component: CarouselComponent,

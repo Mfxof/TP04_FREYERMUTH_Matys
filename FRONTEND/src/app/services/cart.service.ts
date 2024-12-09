@@ -32,4 +32,26 @@ export class CartService {
     let total = panier.length;
     return total;
   }
+
+  addProduit(cartProduct: CartProduct) {
+    let panier = this.panier();
+    let found = false;
+
+    for (let i = 0; i < panier.length; i++) {
+      if (panier[i].name === cartProduct.name) {
+        panier[i].quantity += cartProduct.quantity;
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      panier.push(cartProduct);
+    }
+
+    this.panier.set(panier);
+
+    //log all the products in the cart
+    console.log(this.panier());
+  }
 }

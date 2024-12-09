@@ -5,6 +5,8 @@ import { Produit } from '../../../../models/produit.model';
 import { CommonModule } from '@angular/common';
 import { ProductFilterComponent } from '../product-filter/product-filter.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
+import { CartService } from '../../../../services/cart.service';
+import { CartProduct } from '../../../../models/cartProduct.model';
 
 @Component({
   selector: 'app-product-list',
@@ -17,7 +19,10 @@ export class ProductListComponent implements OnInit, OnDestroy {
   produits: Produit[] = [];
   private subscription: Subscription = new Subscription();
 
-  constructor(private readonly catalogueService: CatalogueService) {}
+  constructor(
+    private readonly catalogueService: CatalogueService,
+    private cartService: CartService
+  ) {}
 
   id: String = '5';
 
@@ -36,5 +41,21 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  get getArticleTotal() {
+    return this.cartService.getArticleTotal;
+  }
+
+  onAddToCart(product: Produit, quantity: string) {
+    const cartProducts = new CartProduct();
+    cartProducts.name = product.name;
+    cartProducts.description = product.description;
+    cartProducts.price = product.price;
+    cartProducts.image = product.image;
+    cartProducts.quantity = parseInt(quantity);
+    cartProducts.description = product.description;
+
+    this.cartService.addProduit(cartProducts);
   }
 }

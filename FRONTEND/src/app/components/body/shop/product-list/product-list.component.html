@@ -1,4 +1,8 @@
 <div class="nos-produit">
+  <a routerLink="/cart" class="btn-buy"
+    >Voir son panier - {{ getArticleTotal }}</a
+  >
+  <hr />
   <h3>Nos produits</h3>
   <p>
     Découvrez nos dernières produits, avec des produits de soin et de bien-être
@@ -16,7 +20,13 @@
       <p>{{ produit.description }}</p>
       <hr />
       <p class="price">Prix : {{ produit.price }}€</p>
-      <a [routerLink]="['/cart', id]" class="btn-buy">Ajouter au panier</a>
+      <input type="number" min="1" max="10000" value="1" #quantityInput />
+      <button
+        class="btn-buy"
+        (click)="onAddToCart(produit, quantityInput.value)"
+      >
+        Ajouter au panier
+      </button>
       <!-- <p>Temp : {{ produit.id }}</p> -->
     </div>
   </div>

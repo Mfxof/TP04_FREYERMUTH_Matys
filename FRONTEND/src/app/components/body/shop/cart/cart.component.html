@@ -5,9 +5,11 @@
   <hr />
   <p>Prix total : {{ getPrixTotal }}</p>
   <p>Nombre d'articles : {{ getArticleTotal }}</p>
+
   <a class="nav-link btn-payment" routerLink="/paiement">Vers le paiement</a>
   <hr />
 
+  <h4 *ngIf="getArticleTotal == 0">Votre panier est vide</h4>
   <div class="catalogue">
     <div *ngFor="let cartProduits of cartProduits" class="cartProduits">
       <img [src]="cartProduits.image" alt="{{ cartProduits.name }}" />
@@ -28,6 +30,11 @@
           value="{{ cartProduits.quantity }}"
         />
       </div>
+      <!-- <p>{{ (cartProduits.quantity * cartProduits.price).toFixed(2) }} "€"</p> -->
+      <!-- <button (click)="onRemoveFromCart(item)">Remove</button> -->
     </div>
   </div>
 </div>
+
+<a routerLink="/boutique" class="btn-back">Retour boutique</a>
+<hr />
