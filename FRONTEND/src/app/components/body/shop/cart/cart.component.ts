@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, signal } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CartProduct } from '../../../../models/cartProduct.model';
 import { CommonModule } from '@angular/common';
@@ -48,6 +48,10 @@ export class CartComponent implements OnInit, OnDestroy {
 
   get getArticleTotal() {
     return this.cartService.getArticleTotal;
+  }
+
+  get getPrixTotalFormatted() {
+    return new Intl.NumberFormat('fr-FR').format(this.getPrixTotal) + ' €';
   }
 
   get getPrixTotal() {
