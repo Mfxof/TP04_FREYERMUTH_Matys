@@ -28,13 +28,20 @@
           step="1"
           placeholder="1"
           value="{{ cartProduits.quantity }}"
+          #quantityInput
         />
       </div>
       <p>
         Prix total :
         {{ (cartProduits.quantity * cartProduits.price).toFixed(2) }}€
       </p>
-      <button class="btn-buy">Mettre à jour</button>
+
+      <button
+        class="btn-buy"
+        (click)="onEditCart(cartProduits, quantityInput.value)"
+      >
+        Mettre à jour
+      </button>
 
       <button class="btn-buy" (click)="onRemoveFromCart(cartProduits)">
         Supprimer

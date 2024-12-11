@@ -40,16 +40,10 @@ export class CartService {
         break;
       }
     }
-
     if (!found) {
       panier.push(cartProduct);
     }
-
     this.panier.set(panier);
-
-    //log all the products in the cart
-    console.log(this.panier());
-    // TO EDITED
   }
 
   // *************** //

@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ProductFilterComponent } from '../product-filter/product-filter.component';
 import { RouterOutlet, RouterLink } from '@angular/router';
 import { CartService } from '../../../../services/cart.service';
+import { Produit } from '../../../../models/produit.model';
 
 @Component({
   selector: 'app-cart',
@@ -16,6 +17,8 @@ import { CartService } from '../../../../services/cart.service';
 export class CartComponent implements OnInit, OnDestroy {
   cartProduits: CartProduct[] = [];
   private subscription: Subscription = new Subscription();
+
+  private panier = signal<Produit[]>([]);
 
   constructor(private readonly cartService: CartService) {}
 
@@ -40,6 +43,16 @@ export class CartComponent implements OnInit, OnDestroy {
 
   onRemoveFromCart(cartProduct: CartProduct) {
     this.cartService.removeProduit(cartProduct);
+  }
+
+  onEditCart(produit: CartProduct, quantity: number) {
+    let panier = this.panier();
+    if (quantity <= 0.0) {
+      this.cartService.removeProduit(produit);
+      return;
+    }
+
+    this.panier.set(panier);
   }
 
   // *************** //

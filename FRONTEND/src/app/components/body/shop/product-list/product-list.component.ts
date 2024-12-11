@@ -61,6 +61,5 @@ export class ProductListComponent implements OnInit, OnDestroy {
 
   get getArticleTotal() {
     return this.cartService.getArticleTotal;
-    // Faire la qqt
   }
 }
