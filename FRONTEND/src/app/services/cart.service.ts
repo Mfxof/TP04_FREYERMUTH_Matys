@@ -67,7 +67,11 @@ export class CartService {
 
   get getArticleTotal() {
     let panier = this.panier();
-    let total = panier.length;
+    let total = 0;
+
+    for (let i = 0; i < panier.length; i++) {
+      total += panier[i].quantity;
+    }
     return total;
   }
 

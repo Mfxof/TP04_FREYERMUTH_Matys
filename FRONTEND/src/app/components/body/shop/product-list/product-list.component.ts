@@ -49,7 +49,7 @@ export class ProductListComponent implements OnInit, OnDestroy {
     cartProducts.description = product.description;
     cartProducts.price = product.price;
     cartProducts.image = product.image;
-    cartProducts.quantity = parseInt(quantity);
+    cartProducts.quantity = +parseInt(quantity);
     cartProducts.description = product.description;
 
     this.cartService.addProduit(cartProducts);
