@@ -46,6 +46,17 @@ export class CartService {
     this.panier.set(panier);
   }
 
+  setProduct(quantity: string) {
+    let panier = this.panier();
+
+    let total = 0;
+    for (let i = 0; i < panier.length; i++) {
+      panier[i].quantity = parseFloat(quantity);
+    }
+
+    this.panier.set(panier);
+  }
+
   // *************** //
   //       T1        //
   // *************** //

@@ -52,7 +52,7 @@ export class CartComponent implements OnInit, OnDestroy {
       return;
     }
 
-    this.panier.set(panier);
+    this.cartService.setProduct(quantity);
   }
 
   // *************** //

@@ -3,11 +3,13 @@
   <p>Consultez vos articles !</p>
 
   <hr />
-  <p>Prix total : {{ getPrixTotalFormatted }}</p>
-  <p>Nombre d'articles : {{ getArticleTotal }}</p>
+  <div *ngIf="getArticleTotal != 0">
+    <p>Prix total : {{ getPrixTotalFormatted }}</p>
+    <p>Nombre d'articles : {{ getArticleTotal }}</p>
 
-  <a class="nav-link btn-payment" routerLink="/paiement">Vers le paiement</a>
-  <hr />
+    <a class="nav-link btn-payment" routerLink="/paiement">Vers le paiement</a>
+    <hr />
+  </div>
 
   <h4 *ngIf="getArticleTotal == 0">Votre panier est vide</h4>
   <div class="catalogue">
