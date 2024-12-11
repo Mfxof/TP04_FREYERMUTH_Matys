@@ -60,3 +60,34 @@ form i {
   width: 25px; /* Set width for icons */
   text-align: center;
 }
+
+[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  background-color: #ff3333;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #ffffff;
+  margin: 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Input */
+
+input[type="number"]::-webkit-inner-spin-button:hover,
+input[type="number"]::-webkit-outer-spin-button:hover {
+  background-color: #e60000;
+  transform: scale(1.2);
+}
+
+input[type="number"]:hover {
+  border-color: #ff3333;
+  background-color: #333333;
+}
+
+input[type="number"]::placeholder {
+  color: #aaaaaa;
+  font-style: italic;
+}

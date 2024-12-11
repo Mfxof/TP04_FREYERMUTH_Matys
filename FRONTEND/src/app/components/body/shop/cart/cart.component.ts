@@ -45,9 +45,9 @@ export class CartComponent implements OnInit, OnDestroy {
     this.cartService.removeProduit(cartProduct);
   }
 
-  onEditCart(produit: CartProduct, quantity: number) {
+  onEditCart(produit: CartProduct, quantity: string) {
     let panier = this.panier();
-    if (quantity <= 0.0) {
+    if (parseFloat(quantity) <= 0.0) {
       this.cartService.removeProduit(produit);
       return;
     }

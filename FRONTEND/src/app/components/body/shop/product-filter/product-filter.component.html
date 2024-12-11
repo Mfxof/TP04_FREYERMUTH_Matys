@@ -29,6 +29,8 @@
       type="number"
       placeholder="Prix minimum"
       [(ngModel)]="searchCriteria.minPrice"
+      min="0"
+      max="1000"
       name="minPrice"
       (input)="onSearch()"
     />
@@ -38,6 +40,8 @@
     <input
       type="number"
       placeholder="Prix maximum"
+      min="1"
+      max="1000"
       [(ngModel)]="searchCriteria.maxPrice"
       name="maxPrice"
       (input)="onSearch()"
